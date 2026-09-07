@@ -9,9 +9,6 @@ const init = () => {
   const galleryTabs = document.querySelectorAll('.gallery-tab');
   const heroButton = document.querySelector('.play-button');
   const form = document.getElementById('duaForm');
-  const testimonialCards = Array.from(document.querySelectorAll('.testimonial'));
-  const prevSlide = document.getElementById('prevSlide');
-  const nextSlide = document.getElementById('nextSlide');
   const i18nElements = Array.from(document.querySelectorAll('[data-i18n]'));
   const i18nPlaceholderElements = Array.from(document.querySelectorAll('[data-i18n-placeholder]'));
   const i18nAriaElements = Array.from(document.querySelectorAll('[data-i18n-aria]'));
@@ -78,7 +75,6 @@ const init = () => {
       labelGallerySection: 'Gallery',
       labelDuaSection: 'Dua Request',
       labelSupportSection: 'Support Dargah Activities',
-      labelTestimonialsSection: 'Testimonials',
 
       // about + history
       aboutHeading: 'A Legacy of Faith and Spiritual Harmony',
@@ -131,17 +127,6 @@ const init = () => {
       sajjadaName: 'Syed Sha Shabbir Hussiani Chishti',
       requestMeeting: 'Request a Meeting',
 
-      // testimonials
-      testimonialsHeading: 'What Devotees Say',
-      testimonial1Text: 'Alhamdulillah, visiting this Dargah brought peace to my heart. The blessings are endless.',
-      testimonial1Name: 'Syed Moinuddin',
-      testimonial1City: 'Bellary',
-      testimonial2Text: 'A spiritual experience like no other. May Allah bless this sacred place always.',
-      testimonial2Name: 'Mohammed Idris',
-      testimonial2City: 'Hyderabad',
-      testimonial3Text: 'The atmosphere of this Dargah is filled with love, peace and unity.',
-      testimonial3Name: 'Sana Fatima',
-      testimonial3City: 'Bangalore',
 
       // sawane hayat
       exploreSawane: 'Sawane Hayat',
@@ -189,8 +174,6 @@ const init = () => {
       ariaMobileNavigation: 'Mobile navigation',
       ariaScrollAbout: 'Scroll to about section',
       ariaPlayLiveDarshan: 'Play live darshan',
-      ariaPreviousTestimonial: 'Previous testimonial',
-      ariaNextTestimonial: 'Next testimonial',
       ariaGalleryFilters: 'Gallery filters',
       ariaVisitDetails: 'Visit details',
       ariaCloseSawane: 'Close sawane list',
@@ -254,7 +237,6 @@ const init = () => {
       labelGallerySection: 'गैलरी',
       labelDuaSection: 'दुआ अनुरोध',
       labelSupportSection: 'दरगाह गतिविधियों में सहयोग',
-      labelTestimonialsSection: 'प्रशंसापत्र',
 
       // about + history
       aboutHeading: 'विश्वास और आध्यात्मिक सद्भाव की विरासत',
@@ -307,17 +289,6 @@ const init = () => {
       sajjadaName: 'सैय्यद शाह शब्बीर हुसैनी चिश्ती',
       requestMeeting: 'मुलाकात का अनुरोध करें',
 
-      // testimonials
-      testimonialsHeading: 'भक्त क्या कहते हैं',
-      testimonial1Text: 'अल्हम्दुलिल्लाह, इस दरगाह की ज़ियारत ने मेरे दिल को सुकून दिया। बरकतें अनंत हैं।',
-      testimonial1Name: 'सैय्यद मोइनुद्दीन',
-      testimonial1City: 'बेल्लारी',
-      testimonial2Text: 'एक अद्वितीय आध्यात्मिक अनुभव। अल्लाह इस पवित्र स्थान पर सदा बरकत बनाए रखे।',
-      testimonial2Name: 'मोहम्मद इदरीस',
-      testimonial2City: 'हैदराबाद',
-      testimonial3Text: 'इस दरगाह का वातावरण प्रेम, शांति और एकता से भरा है।',
-      testimonial3Name: 'सना फ़ातिमा',
-      testimonial3City: 'बेंगलुरु',
 
       // sawane hayat
       exploreSawane: 'सवाने हयात',
@@ -365,8 +336,6 @@ const init = () => {
       ariaMobileNavigation: 'मोबाइल नेविगेशन',
       ariaScrollAbout: 'अबाउट अनुभाग पर स्क्रॉल करें',
       ariaPlayLiveDarshan: 'लाइव दर्शन चलाएँ',
-      ariaPreviousTestimonial: 'पिछला प्रशंसापत्र',
-      ariaNextTestimonial: 'अगला प्रशंसापत्र',
       ariaGalleryFilters: 'गैलरी फ़िल्टर',
       ariaVisitDetails: 'यात्रा विवरण',
       ariaCloseSawane: 'सवाने सूची बंद करें',
@@ -430,7 +399,6 @@ const init = () => {
       labelGallerySection: 'گیلری',
       labelDuaSection: 'دعا کی درخواست',
       labelSupportSection: 'درگاہ کی سرگرمیوں میں تعاون',
-      labelTestimonialsSection: 'تاثرات',
 
       // about + history
       aboutHeading: 'ایمان اور روحانی ہم آہنگی کی میراث',
@@ -483,17 +451,6 @@ const init = () => {
       sajjadaName: 'سید شاہ شبیر حسینی چشتی',
       requestMeeting: 'ملاقات کی درخواست کریں',
 
-      // testimonials
-      testimonialsHeading: 'زائرین کیا کہتے ہیں',
-      testimonial1Text: 'الحمدللہ، اس درگاہ کی زیارت نے میرے دل کو سکون بخشا۔ برکتیں بے شمار ہیں۔',
-      testimonial1Name: 'سید معین الدین',
-      testimonial1City: 'بلاری',
-      testimonial2Text: 'ایک بے مثال روحانی تجربہ۔ اللہ اس مقدس مقام پر ہمیشہ برکت رکھے۔',
-      testimonial2Name: 'محمد ادریس',
-      testimonial2City: 'حیدرآباد',
-      testimonial3Text: 'اس درگاہ کا ماحول محبت، امن اور اتحاد سے بھرپور ہے۔',
-      testimonial3Name: 'ثنا فاطمہ',
-      testimonial3City: 'بنگلور',
 
       // sawane hayat
       exploreSawane: 'سوانح حیات',
@@ -541,8 +498,6 @@ const init = () => {
       ariaMobileNavigation: 'موبائل نیویگیشن',
       ariaScrollAbout: 'تعارف کے حصے پر سکرول کریں',
       ariaPlayLiveDarshan: 'لائیو درشن چلائیں',
-      ariaPreviousTestimonial: 'پچھلا تاثر',
-      ariaNextTestimonial: 'اگلا تاثر',
       ariaGalleryFilters: 'گیلری فلٹرز',
       ariaVisitDetails: 'زیارت کی تفصیلات',
       ariaCloseSawane: 'سوانح فہرست بند کریں',
@@ -841,32 +796,6 @@ const init = () => {
     fadeElements.forEach((element) => revealObserver.observe(element));
   } else {
     fadeElements.forEach((element) => element.classList.add('is-visible'));
-  }
-
-  let currentSlide = 0;
-  const updateTestimonials = () => {
-    testimonialCards.forEach((card, index) => {
-      card.classList.toggle('active', index === currentSlide);
-    });
-  };
-
-  if (testimonialCards.length) {
-    updateTestimonials();
-
-    prevSlide?.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + testimonialCards.length) % testimonialCards.length;
-      updateTestimonials();
-    });
-
-    nextSlide?.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % testimonialCards.length;
-      updateTestimonials();
-    });
-
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % testimonialCards.length;
-      updateTestimonials();
-    }, 6500);
   }
 
   form?.addEventListener('submit', (event) => {
