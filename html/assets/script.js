@@ -39,6 +39,12 @@ const init = () => {
       navDonate: 'Donate',
       navContact: 'Contact',
       bookVisit: 'Book Visit',
+      brandName: 'Dargah Honnur',
+      brandTagline: 'Anantapur · Andhra Pradesh',
+      eventsPending: 'Urs and event dates are announced at the dargah. Please contact the dargah for the current schedule.',
+      contactPending: 'Phone and email are being confirmed by the dargah.',
+      duaNotice: 'This form is not connected to the dargah yet — nothing is sent. Please contact the dargah directly.',
+      duaNotSent: 'Nothing was sent — this form is not connected to the dargah yet.',
       mobileLanguageLabel: 'Language',
       mobileStoriesLabel: 'Spiritual Stories',
 
@@ -90,19 +96,6 @@ const init = () => {
 
       // events + live
       upcomingEvents: 'Upcoming Events',
-      event1Day: '06 Jun',
-      event1Title: 'Annual Urs Mubarak',
-      event1Date: '06 - 08 June 2025',
-      event2Day: '15 Jun',
-      event2Title: 'Qawwali Night',
-      event2Date: '15 June 2025 | 8:00 PM',
-      event3Day: '22 Jun',
-      event3Title: 'Special Dua Program',
-      event3Date: '22 June 2025 | 10:00 AM',
-      event4Day: '05 Jul',
-      event4Title: 'Jalsa & Ijtema',
-      event4Date: '05 July 2025 | 11:00 AM',
-      viewAllEvents: 'View All Events',
       liveDarshan: 'Live Darshan',
       liveBadge: 'LIVE',
       watchLiveNow: 'Watch Live Now',
@@ -181,7 +174,7 @@ const init = () => {
       footerCommunityEvents: 'Community Events',
       footerContact: 'Contact',
       footerContactAddress: 'D. Honnur, Bommanahal Mandal, Anantapur District, Andhra Pradesh 515812',
-      footerCopyright: '© 2025 Dargah Sharif. All Rights Reserved.',
+      footerCopyright: '© 2026 Dargah Honnur. All Rights Reserved.',
       backToTop: 'Back to Top',
 
       // placeholders + aria
@@ -222,6 +215,12 @@ const init = () => {
       navDonate: 'दान करें',
       navContact: 'संपर्क',
       bookVisit: 'बुक विजिट',
+      brandName: 'दरगाह होंनूर',
+      brandTagline: 'अनंतपुर · आंध्र प्रदेश',
+      eventsPending: 'उर्स और कार्यक्रमों की तिथियाँ दरगाह पर घोषित की जाती हैं। वर्तमान कार्यक्रम के लिए कृपया दरगाह से संपर्क करें।',
+      contactPending: 'फ़ोन और ईमेल की पुष्टि दरगाह द्वारा की जा रही है।',
+      duaNotice: 'यह फ़ॉर्म अभी दरगाह से जुड़ा नहीं है — कुछ भी नहीं भेजा जाता। कृपया दरगाह से सीधे संपर्क करें।',
+      duaNotSent: 'कुछ भी नहीं भेजा गया — यह फ़ॉर्म अभी दरगाह से जुड़ा नहीं है।',
       mobileLanguageLabel: 'भाषा',
       mobileStoriesLabel: 'आध्यात्मिक कथाएँ',
 
@@ -273,19 +272,6 @@ const init = () => {
 
       // events + live
       upcomingEvents: 'आगामी कार्यक्रम',
-      event1Day: '06 जून',
-      event1Title: 'वार्षिक उर्स मुबारक',
-      event1Date: '06 - 08 जून 2025',
-      event2Day: '15 जून',
-      event2Title: 'क़व्वाली नाइट',
-      event2Date: '15 जून 2025 | रात 8:00',
-      event3Day: '22 जून',
-      event3Title: 'विशेष दुआ कार्यक्रम',
-      event3Date: '22 जून 2025 | सुबह 10:00',
-      event4Day: '05 जुल',
-      event4Title: 'जलसा और इज्तेमा',
-      event4Date: '05 जुलाई 2025 | सुबह 11:00',
-      viewAllEvents: 'सभी कार्यक्रम देखें',
       liveDarshan: 'लाइव दर्शन',
       liveBadge: 'लाइव',
       watchLiveNow: 'अभी लाइव देखें',
@@ -364,7 +350,7 @@ const init = () => {
       footerCommunityEvents: 'समुदाय कार्यक्रम',
       footerContact: 'संपर्क',
       footerContactAddress: 'डी. होंनूर, बोम्मनहाल मंडल, अनंतपुर ज़िला, आंध्र प्रदेश 515812',
-      footerCopyright: '© 2025 दरगाह शरीफ़। सर्वाधिकार सुरक्षित।',
+      footerCopyright: '© 2026 दरगाह होंनूर। सर्वाधिकार सुरक्षित।',
       backToTop: 'ऊपर जाएँ',
 
       // placeholders + aria
@@ -405,6 +391,12 @@ const init = () => {
       navDonate: 'عطیہ',
       navContact: 'رابطہ',
       bookVisit: 'ملاقات بک کریں',
+      brandName: 'درگاہ ہونور',
+      brandTagline: 'اننت پور · آندھرا پردیش',
+      eventsPending: 'عرس اور تقریبات کی تاریخیں درگاہ پر اعلان کی جاتی ہیں۔ موجودہ شیڈول کے لیے براہ کرم درگاہ سے رابطہ کریں۔',
+      contactPending: 'فون اور ای میل کی تصدیق درگاہ کی جانب سے کی جا رہی ہے۔',
+      duaNotice: 'یہ فارم ابھی درگاہ سے منسلک نہیں ہے — کچھ ارسال نہیں ہوتا۔ براہ کرم درگاہ سے براہِ راست رابطہ کریں۔',
+      duaNotSent: 'کچھ ارسال نہیں ہوا — یہ فارم ابھی درگاہ سے منسلک نہیں ہے۔',
       mobileLanguageLabel: 'زبان',
       mobileStoriesLabel: 'روحانی کہانیاں',
 
@@ -456,19 +448,6 @@ const init = () => {
 
       // events + live
       upcomingEvents: 'آنے والی تقریبات',
-      event1Day: '06 جون',
-      event1Title: 'سالانہ عرس مبارک',
-      event1Date: '06 - 08 جون 2025',
-      event2Day: '15 جون',
-      event2Title: 'قوالی کی شب',
-      event2Date: '15 جون 2025 | رات 8:00',
-      event3Day: '22 جون',
-      event3Title: 'خصوصی دعائیہ پروگرام',
-      event3Date: '22 جون 2025 | صبح 10:00',
-      event4Day: '05 جولائی',
-      event4Title: 'جلسہ و اجتماع',
-      event4Date: '05 جولائی 2025 | صبح 11:00',
-      viewAllEvents: 'تمام تقریبات دیکھیں',
       liveDarshan: 'لائیو درشن',
       liveBadge: 'لائیو',
       watchLiveNow: 'ابھی لائیو دیکھیں',
@@ -547,7 +526,7 @@ const init = () => {
       footerCommunityEvents: 'برادری کی تقریبات',
       footerContact: 'رابطہ',
       footerContactAddress: 'ڈی. ہونور، بومن ہال منڈل، ضلع اننت پور، آندھرا پردیش 515812',
-      footerCopyright: '© 2025 درگاہ شریف۔ جملہ حقوق محفوظ ہیں۔',
+      footerCopyright: '© 2026 درگاہ ہونور۔ جملہ حقوق محفوظ ہیں۔',
       backToTop: 'اوپر جائیں',
 
       // placeholders + aria
@@ -892,11 +871,8 @@ const init = () => {
 
   form?.addEventListener('submit', (event) => {
     event.preventDefault();
-    const nameInput = form.querySelector('input[name="fullName"]');
-    const name = nameInput?.value.trim() || 'Visitor';
     const dict = translations[currentLanguage] || translations.en;
-    createToast(`✓ ${dict.thankYou}, ${name}! ${dict.duaSubmitted}`);
-    form.reset();
+    createToast(dict.duaNotSent);
   });
 
   // Runs last so everything it touches (renderModal) is already defined.

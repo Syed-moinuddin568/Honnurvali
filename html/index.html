@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/styles.css?v=16" />
+  <link rel="stylesheet" href="./assets/styles.css?v=18" />
 </head>
 <body>
   <div class="page-shell">
@@ -17,8 +17,8 @@
         <div class="brand">
           <div class="logo-mark" aria-hidden="true">DH</div>
           <div class="brand-copy">
-            <span class="brand-name">Hazrat Khwaja</span>
-            <span class="brand-subtitle">Moinuddin Chishti Dargah Sharif</span>
+            <span class="brand-name" data-i18n="brandName">Dargah Honnur</span>
+            <span class="brand-subtitle" data-i18n="brandTagline">Anantapur · Andhra Pradesh</span>
           </div>
         </div>
         <button class="menu-toggle" aria-expanded="false" data-i18n-aria="ariaOpenMenu" aria-label="Open navigation menu" aria-controls="mobileMenu">
@@ -50,8 +50,8 @@
             <div class="brand mobile-brand">
               <div class="logo-mark" aria-hidden="true">DH</div>
               <div class="brand-copy">
-                <span class="brand-name">Dargah Honnur</span>
-                <span class="brand-subtitle">Spiritual Sanctuary</span>
+                <span class="brand-name" data-i18n="brandName">Dargah Honnur</span>
+                <span class="brand-subtitle" data-i18n="brandTagline">Anantapur · Andhra Pradesh</span>
               </div>
             </div>
             <button class="menu-toggle menu-toggle--close" aria-expanded="true" data-i18n-aria="ariaCloseMenu" aria-label="Close menu">
@@ -239,37 +239,9 @@
           <div class="card-panel">
             <span class="section-label" data-i18n="labelEventsSection">Urs &amp; Events</span>
             <h3 data-i18n="upcomingEvents">Upcoming Events</h3>
-            <div class="event-list">
-              <article>
-                <span class="event-date" data-i18n="event1Day">06 Jun</span>
-                <div>
-                  <strong data-i18n="event1Title">Annual Urs Mubarak</strong>
-                  <p data-i18n="event1Date">06 - 08 June 2025</p>
-                </div>
-              </article>
-              <article>
-                <span class="event-date" data-i18n="event2Day">15 Jun</span>
-                <div>
-                  <strong data-i18n="event2Title">Qawwali Night</strong>
-                  <p data-i18n="event2Date">15 June 2025 | 8:00 PM</p>
-                </div>
-              </article>
-              <article>
-                <span class="event-date" data-i18n="event3Day">22 Jun</span>
-                <div>
-                  <strong data-i18n="event3Title">Special Dua Program</strong>
-                  <p data-i18n="event3Date">22 June 2025 | 10:00 AM</p>
-                </div>
-              </article>
-              <article>
-                <span class="event-date" data-i18n="event4Day">05 Jul</span>
-                <div>
-                  <strong data-i18n="event4Title">Jalsa &amp; Ijtema</strong>
-                  <p data-i18n="event4Date">05 July 2025 | 11:00 AM</p>
-                </div>
-              </article>
+            <div class="event-pending">
+              <p data-i18n="eventsPending">Urs and event dates are announced at the dargah. Please contact the dargah for the current schedule.</p>
             </div>
-            <a class="btn btn-outline" href="#" data-i18n="viewAllEvents">View All Events</a>
           </div>
 
           <div class="card-panel live-card" id="live">
@@ -342,6 +314,7 @@
           <div class="card-panel request-panel">
             <span class="section-label" data-i18n="labelDuaSection">Dua Request</span>
             <h3 data-i18n="duaRequestHeading">Submit for Dargah Updates</h3>
+            <p class="form-notice" data-i18n="duaNotice">This form is not connected to the dargah yet — nothing is sent. Please contact the dargah directly.</p>
             <form class="dua-form" id="duaForm">
               <div class="form-row">
                 <label for="fullName" data-i18n="labelFullName">Full Name</label>
@@ -443,12 +416,11 @@
         <div>
           <h4 data-i18n="footerContact">Contact</h4>
           <p data-i18n="footerContactAddress">D. Honnur, Bommanahal Mandal, Anantapur District, Andhra Pradesh 515812</p>
-          <p><a href="mailto:info@dargahsharif.com">info@dargahsharif.com</a></p>
-          <p><a href="tel:+919876543210" dir="ltr">+91 98765 43210</a></p>
+          <p data-i18n="contactPending">Phone and email are being confirmed by the dargah.</p>
         </div>
       </div>
       <div class="container footer-bottom">
-        <p data-i18n="footerCopyright">© 2025 Dargah Sharif. All Rights Reserved.</p>
+        <p data-i18n="footerCopyright">© 2026 Dargah Honnur. All Rights Reserved.</p>
         <div class="footer-actions">
           <div class="social-links">
             <a href="#" aria-label="Instagram">Instagram</a>
@@ -460,6 +432,6 @@
       </div>
     </footer>
   </div>
-  <script src="./assets/script.js?v=16"></script>
+  <script src="./assets/script.js?v=18"></script>
 </body>
 </html>
