@@ -6,7 +6,6 @@ const init = () => {
   const mobileOverlay = document.querySelector('.mobile-menu__overlay');
   const mobileLinks = document.querySelectorAll('.mobile-nav__link');
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
-  const galleryTabs = document.querySelectorAll('.gallery-tab');
   const heroButton = document.querySelector('.play-button');
   const form = document.getElementById('duaForm');
   const i18nElements = Array.from(document.querySelectorAll('[data-i18n]'));
@@ -62,7 +61,6 @@ const init = () => {
       statPrayerValue: 'Fajr - Isha',
       statPrayerNote: 'Daily schedule',
       statSajjadaLabel: 'Sajjada Nasheen',
-      statSajjadaValue: 'Syed Sha Shabbir Badesha Hussaini Chishti',
       statSajjadaNote: 'Leading prayers',
 
       // section labels
@@ -109,11 +107,7 @@ const init = () => {
 
       // gallery
       galleryHeading: 'Moments of Blessings',
-      galleryTabAll: 'All',
-      galleryTabPhotos: 'Photos',
-      galleryTabVideos: 'Videos',
-      galleryTabUrs: 'Urs Mubarak',
-      exploreGallery: 'Explore Gallery',
+      galleryPending: 'Photographs of the dargah will be published here.',
 
       // dua + donate
       duaRequestHeading: 'Submit for Dargah Updates',
@@ -123,8 +117,8 @@ const init = () => {
       labelDuaRequest: 'Your Dua Request',
       submitDua: 'Submit Dua',
       supportHeading: 'Meet the Sajjada Nasheen',
-      meetText: 'Syed Sha Shabbir Hussiani Chishti welcomes devotees and visitors for blessings, guidance, and spiritual support.',
-      sajjadaName: 'Syed Sha Shabbir Hussiani Chishti',
+      meetText: 'The Sajjada Nasheen welcomes devotees and visitors for blessings, guidance and spiritual support.',
+      sajjadaName: 'Syed Shah Shabbir Badesha Hussaini Chishti',
       requestMeeting: 'Request a Meeting',
 
 
@@ -174,7 +168,6 @@ const init = () => {
       ariaMobileNavigation: 'Mobile navigation',
       ariaScrollAbout: 'Scroll to about section',
       ariaPlayLiveDarshan: 'Play live darshan',
-      ariaGalleryFilters: 'Gallery filters',
       ariaVisitDetails: 'Visit details',
       ariaCloseSawane: 'Close sawane list',
       ariaCloseSidebar: 'Close sidebar',
@@ -224,7 +217,6 @@ const init = () => {
       statPrayerValue: 'फ़ज्र - इशा',
       statPrayerNote: 'दैनिक कार्यक्रम',
       statSajjadaLabel: 'सज्जादा नशीन',
-      statSajjadaValue: 'सैय्यद शाह शब्बीर बादेशा हुसैनी चिश्ती',
       statSajjadaNote: 'नमाज़ का नेतृत्व',
 
       // section labels
@@ -271,11 +263,7 @@ const init = () => {
 
       // gallery
       galleryHeading: 'बरकत के पल',
-      galleryTabAll: 'सभी',
-      galleryTabPhotos: 'तस्वीरें',
-      galleryTabVideos: 'वीडियो',
-      galleryTabUrs: 'उर्स मुबारक',
-      exploreGallery: 'गैलरी देखें',
+      galleryPending: 'दरगाह की तस्वीरें यहाँ प्रकाशित की जाएँगी।',
 
       // dua + donate
       duaRequestHeading: 'दरगाह अपडेट के लिए सबमिट करें',
@@ -285,8 +273,8 @@ const init = () => {
       labelDuaRequest: 'आपकी दुआ प्रार्थना',
       submitDua: 'दुआ सबमिट करें',
       supportHeading: 'सज्जादा नशीन से मिलें',
-      meetText: 'सैय्यद शाह शब्बीर हुसैनी चिश्ती भक्तों और आगंतुकों का आशीर्वाद, मार्गदर्शन और आध्यात्मिक समर्थन के लिए स्वागत करते हैं।',
-      sajjadaName: 'सैय्यद शाह शब्बीर हुसैनी चिश्ती',
+      meetText: 'सज्जादा नशीन भक्तों और आगंतुकों का आशीर्वाद, मार्गदर्शन और आध्यात्मिक समर्थन के लिए स्वागत करते हैं।',
+      sajjadaName: 'सैय्यद शाह शब्बीर बादेशा हुसैनी चिश्ती',
       requestMeeting: 'मुलाकात का अनुरोध करें',
 
 
@@ -336,7 +324,6 @@ const init = () => {
       ariaMobileNavigation: 'मोबाइल नेविगेशन',
       ariaScrollAbout: 'अबाउट अनुभाग पर स्क्रॉल करें',
       ariaPlayLiveDarshan: 'लाइव दर्शन चलाएँ',
-      ariaGalleryFilters: 'गैलरी फ़िल्टर',
       ariaVisitDetails: 'यात्रा विवरण',
       ariaCloseSawane: 'सवाने सूची बंद करें',
       ariaCloseSidebar: 'साइडबार बंद करें',
@@ -386,7 +373,6 @@ const init = () => {
       statPrayerValue: 'فجر - عشاء',
       statPrayerNote: 'روزانہ کا شیڈول',
       statSajjadaLabel: 'سجادہ نشین',
-      statSajjadaValue: 'سید شاہ شبیر بادیشا حسینی چشتی',
       statSajjadaNote: 'امامت فرماتے ہیں',
 
       // section labels
@@ -433,11 +419,7 @@ const init = () => {
 
       // gallery
       galleryHeading: 'برکتوں کے لمحات',
-      galleryTabAll: 'تمام',
-      galleryTabPhotos: 'تصاویر',
-      galleryTabVideos: 'ویڈیوز',
-      galleryTabUrs: 'عرس مبارک',
-      exploreGallery: 'گیلری دیکھیں',
+      galleryPending: 'درگاہ کی تصاویر یہاں شائع کی جائیں گی۔',
 
       // dua + donate
       duaRequestHeading: 'درگاہ اپڈیٹس کے لیے جمع کروائیں',
@@ -447,8 +429,8 @@ const init = () => {
       labelDuaRequest: 'آپ کی دعا کی درخواست',
       submitDua: 'دعا جمع کریں',
       supportHeading: 'سجادہ نشین سے ملیں',
-      meetText: 'سید شاہ شبیر حسینی چشتی زائرین کو برکتوں، رہنمائی اور روحانی مدد کے لیے خوش آمدید کہتے ہیں۔',
-      sajjadaName: 'سید شاہ شبیر حسینی چشتی',
+      meetText: 'سجادہ نشین زائرین کو برکتوں، رہنمائی اور روحانی مدد کے لیے خوش آمدید کہتے ہیں۔',
+      sajjadaName: 'سید شاہ شبیر بادیشا حسینی چشتی',
       requestMeeting: 'ملاقات کی درخواست کریں',
 
 
@@ -498,7 +480,6 @@ const init = () => {
       ariaMobileNavigation: 'موبائل نیویگیشن',
       ariaScrollAbout: 'تعارف کے حصے پر سکرول کریں',
       ariaPlayLiveDarshan: 'لائیو درشن چلائیں',
-      ariaGalleryFilters: 'گیلری فلٹرز',
       ariaVisitDetails: 'زیارت کی تفصیلات',
       ariaCloseSawane: 'سوانح فہرست بند کریں',
       ariaCloseSidebar: 'سائیڈ بار بند کریں',
@@ -769,13 +750,6 @@ const init = () => {
       closeModal();
       closePanel();
     }
-  });
-
-  galleryTabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      galleryTabs.forEach((button) => button.classList.remove('active'));
-      tab.classList.add('active');
-    });
   });
 
   const fadeElements = document.querySelectorAll('.fade-up');

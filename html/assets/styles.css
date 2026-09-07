@@ -1809,7 +1809,8 @@ footer h4 {
    page states that plainly instead of showing invented dates or contacts.
    --------------------------------------------------------------------------- */
 
-.event-pending {
+.event-pending,
+.gallery-pending {
   margin: 1.5rem 0 0;
   padding: 1.25rem 1.4rem;
   border-radius: 22px;
@@ -1817,7 +1818,8 @@ footer h4 {
   background: rgba(255, 255, 255, 0.03);
 }
 
-.event-pending p {
+.event-pending p,
+.gallery-pending p {
   margin: 0;
   color: var(--text-secondary);
   line-height: 1.75;
