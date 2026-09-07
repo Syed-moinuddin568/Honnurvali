@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07131d"/>
+      <stop offset="50%" stop-color="#1b3b4f"/>
+      <stop offset="100%" stop-color="#0f6f7d"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3de5ff"/>
+      <stop offset="100%" stop-color="#ff8fe0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1230" cy="220" r="220" fill="#3de5ff" opacity="0.16"/>
+  <circle cx="360" cy="690" r="280" fill="#ff8fe0" opacity="0.13"/>
+  <rect x="180" y="170" width="1240" height="560" rx="40" fill="#0d1722" opacity="0.55" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <path d="M760 260h120c52 0 96 42 96 96v176c0 52-42 96-96 96H760c-52 0-96-42-96-96V356c0-52 42-96 96-96Z" fill="none" stroke="url(#glow)" stroke-width="10"/>
+  <path d="M700 620c80-70 120-120 120-180 0-44-30-83-76-83-42 0-76 34-76 83 0 60 40 110 120 180" fill="none" stroke="#f3f7ff" stroke-width="8" stroke-linecap="round"/>
+  <path d="M820 620c80-70 120-120 120-180 0-44-30-83-76-83-42 0-76 34-76 83 0 60 40 110 120 180" fill="none" stroke="#f3f7ff" stroke-width="8" stroke-linecap="round"/>
+  <rect x="320" y="630" width="960" height="58" rx="29" fill="#ffffff" opacity="0.1"/>
+  <text x="800" y="780" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700" fill="#f7fbff">Dargah Honnur</text>
+  <text x="800" y="830" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#bfefff" letter-spacing="3">SACRED PLACE • PEACE • DEVOTION</text>
+</svg>
