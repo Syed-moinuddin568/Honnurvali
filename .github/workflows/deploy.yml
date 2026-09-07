@@ -28,11 +28,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configure Pages
-        # enablement:true turns Pages on for the repo on the first run, so no
-        # manual visit to Settings > Pages is required.
+        # Pages is already enabled on the repo with source "GitHub Actions";
+        # enablement:true here was rejected by the default workflow token.
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
