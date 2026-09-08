@@ -521,6 +521,93 @@ const init = () => {
     }, 2800);
   };
 
+  /* ---------------------------------------------------------------------
+     Upcoming events.
+
+     Add an entry per event and it renders itself: past events drop off
+     automatically and the countdown is computed, so nothing can go stale
+     the way the old hardcoded "3 days to go" did. Dates are ISO; month
+     names and the countdown phrase are localised by Intl, so a new event
+     needs no new translation strings beyond its own title.
+
+       {
+         start: '2027-05-28',                 // required, ISO
+         end:   '2027-05-30',                 // optional, multi-day
+         time:  '18:00',                      // optional, 24h
+         title: { en: 'Annual Urs Mubarak',
+                  hi: 'वार्षिक उर्स मुबारक',
+                  ur: 'سالانہ عرس مبارک' },
+       },
+     --------------------------------------------------------------------- */
+  const EVENTS = [];
+
+  const eventList = document.getElementById('eventList');
+  const eventsEmpty = document.getElementById('eventsEmpty');
+
+  const startOfToday = () => {
+    const d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  };
+
+  const renderEvents = () => {
+    if (!eventList) return;
+    const lang = currentLanguage;
+    const today = startOfToday();
+
+    const upcoming = EVENTS.map((e) => ({
+      ...e,
+      startDate: new Date(`${e.start}T00:00:00`),
+      endDate: new Date(`${e.end || e.start}T00:00:00`),
+    }))
+      .filter((e) => !Number.isNaN(+e.startDate) && e.endDate >= today)
+      .sort((a, b) => a.startDate - b.startDate);
+
+    eventList.textContent = '';
+    if (eventsEmpty) eventsEmpty.hidden = upcoming.length > 0;
+    if (!upcoming.length) return;
+
+    const dayFmt = new Intl.DateTimeFormat(lang, { day: '2-digit' });
+    const monFmt = new Intl.DateTimeFormat(lang, { month: 'short' });
+    const fullFmt = new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' });
+    const rel =
+      typeof Intl.RelativeTimeFormat === 'function'
+        ? new Intl.RelativeTimeFormat(lang, { numeric: 'auto' })
+        : null;
+
+    upcoming.forEach((e) => {
+      const article = document.createElement('article');
+
+      const chip = document.createElement('span');
+      chip.className = 'event-date';
+      chip.innerHTML = `<strong>${dayFmt.format(e.startDate)}</strong><small>${monFmt.format(e.startDate)}</small>`;
+
+      const body = document.createElement('div');
+      const title = document.createElement('strong');
+      title.textContent = (e.title && (e.title[lang] || e.title.en)) || '';
+
+      const when = document.createElement('p');
+      const span =
+        +e.endDate !== +e.startDate
+          ? `${fullFmt.format(e.startDate)} — ${fullFmt.format(e.endDate)}`
+          : fullFmt.format(e.startDate);
+      when.textContent = e.time ? `${span} · ${e.time}` : span;
+
+      body.append(title, when);
+      article.append(chip, body);
+
+      if (rel) {
+        const days = Math.round((e.startDate - today) / 86400000);
+        const badge = document.createElement('span');
+        badge.className = 'event-countdown';
+        badge.textContent = rel.format(days, 'day');
+        article.append(badge);
+      }
+
+      eventList.append(article);
+    });
+  };
+
   // `silent` suppresses the confirmation toast — used for the initial render,
   // where nothing has been selected yet.
   const updateLanguage = (lang, { silent = false } = {}) => {
@@ -566,6 +653,7 @@ const init = () => {
     });
 
     renderModal();
+    renderEvents();
 
     if (!silent) {
       createToast(translations[lang].languageToast);

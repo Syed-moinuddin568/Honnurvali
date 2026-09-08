@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/styles.css?v=21" />
+  <link rel="stylesheet" href="./assets/styles.css?v=22" />
   <link rel="stylesheet" href="./assets/effects.css?v=2" />
 </head>
 <body>
@@ -241,7 +241,8 @@
           <div class="card-panel">
             <span class="section-label" data-i18n="labelEventsSection">Urs &amp; Events</span>
             <h3 data-i18n="upcomingEvents">Upcoming Events</h3>
-            <div class="event-pending">
+            <div class="event-list" id="eventList" aria-live="polite"></div>
+            <div class="event-pending" id="eventsEmpty">
               <p data-i18n="eventsPending">Urs and event dates are announced at the dargah. Please contact the dargah for the current schedule.</p>
             </div>
           </div>
@@ -388,7 +389,7 @@
     </footer>
     <button class="to-top" id="toTop" type="button" data-i18n-aria="backToTop" aria-label="Back to Top">↑</button>
   </div>
-  <script src="./assets/script.js?v=21"></script>
+  <script src="./assets/script.js?v=22"></script>
   <script src="./assets/effects.js?v=1" defer></script>
 </body>
 </html>
