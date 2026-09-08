@@ -9,8 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/styles.css?v=20" />
+  <link rel="stylesheet" href="./assets/effects.css?v=2" />
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <div class="page-shell">
     <header class="site-header" id="top">
       <div class="site-nav">
@@ -122,7 +124,7 @@
             <span class="eyebrow" data-i18n="welcome">Welcome to</span>
             <h1 class="hero__title" data-i18n="heroTitle">Hazrat Khwaja Syed Shah Sufi Sarmasth Hussaini Chishty Al Quadri (R.A)</h1>
             <p class="hero__text" data-i18n="heroText">The resting place of a Sufi saint who travelled from Bijapur across the Deccan and chose Honnur for his final years — a sanctuary of prayer, unity and devotion in Anantapur district, Andhra Pradesh.</p>
-            <div class="hero__actions">
+            <div class="hero__actions stagger">
               <a class="btn btn-primary" href="#history" data-i18n="viewHistory">View History</a>
               <a class="btn btn-outline" href="#live" data-i18n="watchLive">Watch Live</a>
               <a class="btn btn-ghost" href="#donate" data-i18n="donate">Donate</a>
@@ -134,7 +136,7 @@
               <span class="visit-card__pulse" aria-hidden="true"></span>
               <span data-i18n="visitCardStatus">Open all day for ziyarat</span>
             </p>
-            <dl class="visit-card__list">
+            <dl class="visit-card__list stagger">
               <div class="visit-card__row">
                 <dt data-i18n="statLocationLabel">Location</dt>
                 <dd>
@@ -211,7 +213,7 @@
             <span class="section-label" data-i18n="labelHistorySection">History</span>
             <h2 data-i18n="historyHeading">From Bijapur to Honnur</h2>
             <p data-i18n="historyText">Hazrat Khwaja Syed Shah Sufi Sarmasth Hussaini set out from Bijapur to carry the teachings of Islam through the Deccan, and chose the village of Honnur as the place to spend his final years. The shrine raised over his resting place has drawn seekers ever since.</p>
-            <div class="history-cards">
+            <div class="history-cards stagger">
               <article class="info-card">
                 <strong data-i18n="historyCard1Title">Bijapur</strong>
                 <p data-i18n="historyCard1Text">The saint began his journey in Bijapur, the Deccan sultanate country that shaped the region's Sufi traditions.</p>
@@ -266,7 +268,7 @@
             <span class="section-label" data-i18n="labelSaintSection">Saint Biography</span>
             <h2 data-i18n="saintBioHeading">Hazrat Khwaja Syed Shah Sufi Sarmasth Hussaini Chishty Al Quadri (R.A)</h2>
             <p data-i18n="biographyText">Remembered for humility, service and devotion, the saint is honoured in both the Chishti and Qadri silsilas — his full title, Chishty Al Quadri, records that dual initiation. His shrine at Honnur remains a place of prayer, qawwali and spiritual solace.</p>
-            <div class="bio-points">
+            <div class="bio-points stagger">
               <article>
                 <strong data-i18n="bioPoint1Title">Chishti and Qadri</strong>
                 <p data-i18n="bioPoint1Text">Initiated in both silsilas, reflected in the title Chishty Al Quadri carried at the shrine.</p>
@@ -343,7 +345,7 @@
     </main>
 
     <footer id="contact">
-      <div class="container footer-grid">
+      <div class="container footer-grid stagger">
         <div class="footer-brand">
           <div class="logo-mark" aria-hidden="true">DH</div>
           <p data-i18n="footerAbout">Dargah Honnur, the shrine of Hazrat Khwaja Syed Shah Sufi Sarmasth Hussaini Chishty Al Quadri (R.A), is a place of prayer, harmony and spiritual devotion.</p>
@@ -384,7 +386,9 @@
         </div>
       </div>
     </footer>
+    <button class="to-top" id="toTop" type="button" data-i18n-aria="backToTop" aria-label="Back to Top">↑</button>
   </div>
   <script src="./assets/script.js?v=20"></script>
+  <script src="./assets/effects.js?v=1" defer></script>
 </body>
 </html>
