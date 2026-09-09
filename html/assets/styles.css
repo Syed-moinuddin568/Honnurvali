@@ -1871,3 +1871,510 @@ footer h4 {
   font-size: 0.74rem;
   white-space: nowrap;
 }
+
+/* ==========================================================================
+   HOME PAGE SECTIONS
+   Added for the full home-page layout. Same dark-glass theme as the rest.
+   ========================================================================== */
+
+.prose {
+  max-width: 62ch;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.section-head {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+
+/* ------------------------------------------------------------- utility bar */
+
+.utility-bar {
+  background: rgba(3, 7, 12, 0.96);
+  border-bottom: 1px solid rgba(61, 229, 255, 0.08);
+  font-size: 0.82rem;
+}
+
+.utility-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-block: 0.45rem;
+}
+
+.utility-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.utility-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
+
+.utility-links a:hover {
+  color: var(--primary);
+}
+
+/* -------------------------------------------------------------------- hero */
+
+/* single centred column, replacing the earlier two-column hero */
+.hero__inner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.4rem;
+  max-width: 60rem;
+}
+
+.hero__text {
+  margin-inline: auto;
+}
+
+.hero__actions {
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------ quick access */
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.quick-tile {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  padding: 1.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  transition: transform 0.35s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.quick-tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(61, 229, 255, 0.3);
+  background: rgba(61, 229, 255, 0.07);
+}
+
+.quick-tile__icon {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.quick-tile small {
+  color: var(--text-secondary);
+}
+
+/* ----------------------------------------------------------------- journey */
+
+.journey {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0 2rem;
+}
+
+.journey article {
+  padding: 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.journey strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--primary);
+}
+
+.journey p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ------------------------------------------------------------ announcement */
+
+.announce-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 1.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 95, 95, 0.28);
+  background: rgba(255, 95, 95, 0.09);
+}
+
+.announce-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff8a8a;
+  white-space: nowrap;
+}
+
+:root[lang="ur"] .announce-card__tag,
+:root[lang="hi"] .announce-card__tag {
+  letter-spacing: normal;
+  text-transform: none;
+  font-size: 0.88rem;
+}
+
+.announce-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5f5f;
+}
+
+.announce-card__text {
+  flex: 1 1 320px;
+  margin: 0;
+  color: var(--text);
+}
+
+/* ------------------------------------------------------------- event cards */
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.event-grid:empty {
+  display: none;
+}
+
+.event-grid article {
+  display: grid;
+  justify-items: start;
+  gap: 0.85rem;
+  padding: 1.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.event-grid .event-date {
+  min-width: 68px;
+  min-height: 68px;
+}
+
+.event-grid article > div strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+}
+
+.event-grid article > div p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.event-grid .event-countdown {
+  margin-inline-start: 0;
+}
+
+/* ---------------------------------------------------------- prayer timings */
+
+.prayer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.prayer-grid:empty {
+  display: none;
+}
+
+.prayer-cell {
+  display: grid;
+  justify-items: center;
+  gap: 0.3rem;
+  padding: 1.5rem 1rem;
+  background: rgba(6, 13, 22, 0.9);
+  text-align: center;
+}
+
+.prayer-cell span {
+  color: var(--primary);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+:root[lang="ur"] .prayer-cell span,
+:root[lang="hi"] .prayer-cell span {
+  letter-spacing: normal;
+  text-transform: none;
+  font-size: 0.88rem;
+}
+
+.prayer-cell strong {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------ donate */
+
+.donate-panel {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 1.1rem;
+  padding: clamp(2rem, 5vw, 3.25rem);
+}
+
+.donate-panel h2 {
+  margin: 0;
+}
+
+.amount-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.amount {
+  min-width: 104px;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-weight: 600;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.3s ease;
+}
+
+.amount:hover,
+.amount.is-selected {
+  background: rgba(61, 229, 255, 0.16);
+  border-color: rgba(61, 229, 255, 0.34);
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------------- services */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.service {
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  padding: 1.6rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  text-align: center;
+  transition: transform 0.35s ease, border-color 0.25s ease;
+}
+
+.service:hover {
+  transform: translateY(-4px);
+  border-color: rgba(61, 229, 255, 0.28);
+}
+
+.service span {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+/* ----------------------------------------------------------------- gallery */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.gallery-grid figure:hover img {
+  transform: scale(1.07);
+  filter: saturate(1.15);
+}
+
+/* ------------------------------------------------------------ visitor info */
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.visit-item {
+  display: grid;
+  justify-items: start;
+  gap: 0.4rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.visit-item span {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.visit-item p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ----------------------------------------------------------------- updates */
+
+.update-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.update-list:empty {
+  display: none;
+}
+
+.update-list li {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border-inline-start: 3px solid var(--primary);
+}
+
+.update-list time {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* ----------------------------------------------------------------- contact */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.map-panel {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+.map-frame {
+  width: 100%;
+  min-height: 340px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  filter: grayscale(0.2) contrast(1.05);
+}
+
+@media (max-width: 640px) {
+  .utility-links {
+    gap: 0.9rem;
+    font-size: 0.78rem;
+  }
+
+  .map-frame {
+    min-height: 260px;
+  }
+}
+
+/* ------------------------------------------------------- contact fact list */
+
+.facts {
+  margin: 0 0 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fact {
+  display: grid;
+  gap: 0.25rem;
+  padding-block: 1.05rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fact dt {
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+:root[lang="ur"] .fact dt,
+:root[lang="hi"] .fact dt {
+  letter-spacing: normal;
+  text-transform: none;
+  font-size: 0.86rem;
+}
+
+.fact dd {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.fact dd small {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}

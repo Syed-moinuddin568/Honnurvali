@@ -18,8 +18,20 @@
     /* ---- one rAF-throttled scroll handler drives four things ------------ */
     let ticking = false;
 
+    /* The floating launcher sits below the header, and the header's height
+       changes with the utility bar, wrapping and the condense-on-scroll state.
+       Publishing it as a custom property keeps them from ever overlapping. */
+    const syncHeaderHeight = () => {
+      if (!header) return;
+      document.documentElement.style.setProperty(
+        '--header-h',
+        `${Math.round(header.getBoundingClientRect().height)}px`
+      );
+    };
+
     const onScroll = () => {
       ticking = false;
+      syncHeaderHeight();
       const y = window.scrollY;
       const max = document.documentElement.scrollHeight - window.innerHeight;
 
@@ -48,6 +60,8 @@
       { passive: true }
     );
     onScroll();
+    syncHeaderHeight();
+    window.addEventListener('resize', syncHeaderHeight, { passive: true });
 
     toTop?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });

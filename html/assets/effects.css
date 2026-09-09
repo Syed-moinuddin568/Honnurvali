@@ -398,3 +398,9 @@
     transform: none;
   }
 }
+
+/* Anchored to the measured header height (set in effects.js) rather than a
+   fixed offset, so adding or removing a header row cannot hide the launcher. */
+.nav-sawane {
+  inset-block-start: calc(var(--header-h, 6rem) + 0.85rem);
+}

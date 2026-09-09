@@ -20,6 +20,76 @@ const init = () => {
   const translations = {
     en: {
       languageToast: 'Language selected: English',
+      navVisit: 'Visit Us',
+      navPrayer: 'Prayer',
+      navServices: 'Services',
+      donateNow: 'Donate Now',
+      utilHelpline: 'Helpline',
+      utilEmail: 'Email',
+      utilPrayer: 'Prayer Timings',
+      heroTagline: 'A place of faith, peace, devotion and service — at D. Honnur, Anantapur district, Andhra Pradesh.',
+      quickPrayer: 'Prayer Timings',
+      quickPrayerNote: 'Fajr to Isha, daily',
+      quickEvents: 'Urs & Events',
+      quickEventsNote: 'Annual and special programmes',
+      quickLocation: 'Location & Directions',
+      quickLocationNote: 'Bommanahal Mandal, Anantapur',
+      quickStay: 'Stay & Facilities',
+      quickStayNote: 'Ask at the dargah office',
+      readHistory: 'Read Our History',
+      announceLabel: 'Important Announcement',
+      viewAll: 'View All',
+      labelPrayerSection: 'Prayer',
+      prayerHeading: 'Prayer Timings',
+      prayerPending: 'The five daily prayers are observed from Fajr to Isha. Exact timings shift through the year and are announced at the dargah — please confirm locally before travelling.',
+      prayerFajr: 'Fajr',
+      prayerDhuhr: 'Dhuhr',
+      prayerAsr: 'Asr',
+      prayerMaghrib: 'Maghrib',
+      prayerIsha: 'Isha',
+      labelDonateSection: 'Support',
+      donateHeading: 'Support the Dargah',
+      donateText: 'Your contribution helps support religious, charitable and community activities at the shrine.',
+      donateNotice: 'Online donation is not set up yet — no payment is taken on this site. Please contact the dargah to contribute.',
+      amountOther: 'Other',
+      contactToDonate: 'Contact to Donate',
+      labelServicesSection: 'Services',
+      servicesHeading: 'Our Services',
+      servicesNote: 'Availability varies — please confirm with the dargah office before you travel.',
+      svcCharity: 'Charity',
+      svcLangar: 'Langar',
+      svcStay: 'Accommodation',
+      svcVolunteer: 'Volunteer',
+      svcRequests: 'Dua Requests',
+      svcHelp: 'Help Desk',
+      galleryNote: 'Views of the shrine at Honnur. More photographs will be added.',
+      labelVisitSection: 'Visiting',
+      visitHeading: 'Visitor Information',
+      visitReach: 'How to Reach',
+      visitReachText: 'D. Honnur, Bommanahal Mandal, Anantapur District, Andhra Pradesh 515812.',
+      visitHours: 'Visiting Hours',
+      visitHoursText: 'Open all day for ziyarat, every day of the year.',
+      visitParking: 'Parking',
+      visitParkingText: 'Please ask at the dargah office on arrival.',
+      visitGuide: 'Visitor Guidelines',
+      visitGuideText: 'Dress modestly, remove footwear before entering, and keep the shrine quiet during prayers.',
+      visitMedical: 'Medical Help',
+      visitMedicalText: 'Nearest facilities are in Bommanahal. Ask at the office for assistance.',
+      visitEmergency: 'Emergency Contact',
+      visitEmergencyText: 'A contact number will be published once confirmed by the dargah.',
+      labelUpdatesSection: 'Notices',
+      updatesHeading: 'Latest Updates',
+      updatesPending: 'No notices at present. Announcements from the dargah will appear here.',
+      labelContactSection: 'Contact',
+      contactHeading: 'Contact Us',
+      contactAddressLabel: 'Address',
+      contactPhoneLabel: 'Phone',
+      contactEmailLabel: 'Email',
+      contactAddress: 'D. Honnur, Bommanahal Mandal, Anantapur District, Andhra Pradesh 515812',
+      openInMaps: 'Open in Google Maps',
+      ariaUtilityLinks: 'Quick contact',
+      ariaAmounts: 'Suggested contribution',
+
       darshanComingSoon: 'Live Darshan feature coming soon.',
       thankYou: 'Thank you',
       duaSubmitted: 'Your dua request has been submitted.',
@@ -176,6 +246,76 @@ const init = () => {
 
     hi: {
       languageToast: 'भाषा सेट कर दी गई: हिंदी',
+      navVisit: 'दर्शन',
+      navPrayer: 'नमाज़',
+      navServices: 'सेवाएँ',
+      donateNow: 'दान करें',
+      utilHelpline: 'हेल्पलाइन',
+      utilEmail: 'ईमेल',
+      utilPrayer: 'नमाज़ का समय',
+      heroTagline: 'आस्था, शांति, भक्ति और सेवा का स्थान — डी. होंनूर, अनंतपुर ज़िला, आंध्र प्रदेश।',
+      quickPrayer: 'नमाज़ का समय',
+      quickPrayerNote: 'प्रतिदिन फ़ज्र से इशा तक',
+      quickEvents: 'उर्स और कार्यक्रम',
+      quickEventsNote: 'वार्षिक और विशेष आयोजन',
+      quickLocation: 'स्थान और मार्ग',
+      quickLocationNote: 'बोम्मनहाल मंडल, अनंतपुर',
+      quickStay: 'ठहरने की सुविधा',
+      quickStayNote: 'दरगाह कार्यालय से पूछें',
+      readHistory: 'हमारा इतिहास पढ़ें',
+      announceLabel: 'महत्वपूर्ण सूचना',
+      viewAll: 'सभी देखें',
+      labelPrayerSection: 'नमाज़',
+      prayerHeading: 'नमाज़ का समय',
+      prayerPending: 'पाँच वक़्त की नमाज़ फ़ज्र से इशा तक अदा की जाती है। सटीक समय वर्ष भर बदलता रहता है और दरगाह पर घोषित किया जाता है — यात्रा से पहले कृपया स्थानीय रूप से पुष्टि करें।',
+      prayerFajr: 'फ़ज्र',
+      prayerDhuhr: 'ज़ुहर',
+      prayerAsr: 'अस्र',
+      prayerMaghrib: 'मग़रिब',
+      prayerIsha: 'इशा',
+      labelDonateSection: 'सहयोग',
+      donateHeading: 'दरगाह को सहयोग दें',
+      donateText: 'आपका योगदान दरगाह की धार्मिक, परोपकारी और सामुदायिक गतिविधियों में सहायक होता है।',
+      donateNotice: 'ऑनलाइन दान अभी उपलब्ध नहीं है — इस साइट पर कोई भुगतान नहीं लिया जाता। योगदान के लिए कृपया दरगाह से संपर्क करें।',
+      amountOther: 'अन्य',
+      contactToDonate: 'दान हेतु संपर्क करें',
+      labelServicesSection: 'सेवाएँ',
+      servicesHeading: 'हमारी सेवाएँ',
+      servicesNote: 'उपलब्धता बदलती रहती है — यात्रा से पहले कृपया दरगाह कार्यालय से पुष्टि करें।',
+      svcCharity: 'दान-पुण्य',
+      svcLangar: 'लंगर',
+      svcStay: 'ठहरने की व्यवस्था',
+      svcVolunteer: 'स्वयंसेवा',
+      svcRequests: 'दुआ अनुरोध',
+      svcHelp: 'सहायता केंद्र',
+      galleryNote: 'होंनूर स्थित दरगाह के दृश्य। और तस्वीरें जोड़ी जाएँगी।',
+      labelVisitSection: 'दर्शन',
+      visitHeading: 'आगंतुक जानकारी',
+      visitReach: 'कैसे पहुँचें',
+      visitReachText: 'डी. होंनूर, बोम्मनहाल मंडल, अनंतपुर ज़िला, आंध्र प्रदेश 515812।',
+      visitHours: 'दर्शन का समय',
+      visitHoursText: 'ज़ियारत के लिए प्रतिदिन, पूरे दिन खुला।',
+      visitParking: 'पार्किंग',
+      visitParkingText: 'पहुँचने पर कृपया दरगाह कार्यालय से पूछें।',
+      visitGuide: 'आगंतुक दिशानिर्देश',
+      visitGuideText: 'शालीन वस्त्र पहनें, प्रवेश से पहले जूते उतारें, और नमाज़ के समय शांति बनाए रखें।',
+      visitMedical: 'चिकित्सा सहायता',
+      visitMedicalText: 'निकटतम सुविधाएँ बोम्मनहाल में हैं। सहायता के लिए कार्यालय से संपर्क करें।',
+      visitEmergency: 'आपातकालीन संपर्क',
+      visitEmergencyText: 'दरगाह द्वारा पुष्टि होने पर संपर्क नंबर प्रकाशित किया जाएगा।',
+      labelUpdatesSection: 'सूचनाएँ',
+      updatesHeading: 'नवीनतम अपडेट',
+      updatesPending: 'फ़िलहाल कोई सूचना नहीं। दरगाह की घोषणाएँ यहाँ दिखाई देंगी।',
+      labelContactSection: 'संपर्क',
+      contactHeading: 'संपर्क करें',
+      contactAddressLabel: 'पता',
+      contactPhoneLabel: 'फ़ोन',
+      contactEmailLabel: 'ईमेल',
+      contactAddress: 'डी. होंनूर, बोम्मनहाल मंडल, अनंतपुर ज़िला, आंध्र प्रदेश 515812',
+      openInMaps: 'गूगल मैप्स में खोलें',
+      ariaUtilityLinks: 'त्वरित संपर्क',
+      ariaAmounts: 'सुझाया गया योगदान',
+
       darshanComingSoon: 'लाइव दर्शन सुविधा शीघ्र ही आ रही है।',
       thankYou: 'धन्यवाद',
       duaSubmitted: 'आपका दुआ अनुरोध प्रस्तुत किया गया है।',
@@ -332,6 +472,76 @@ const init = () => {
 
     ur: {
       languageToast: 'زبان منتخب کی گئی: اردو',
+      navVisit: 'زیارت',
+      navPrayer: 'نماز',
+      navServices: 'خدمات',
+      donateNow: 'عطیہ کریں',
+      utilHelpline: 'ہیلپ لائن',
+      utilEmail: 'ای میل',
+      utilPrayer: 'نماز کے اوقات',
+      heroTagline: 'ایمان، سکون، عقیدت اور خدمت کا مقام — ڈی. ہونور، ضلع اننت پور، آندھرا پردیش۔',
+      quickPrayer: 'نماز کے اوقات',
+      quickPrayerNote: 'روزانہ فجر سے عشاء تک',
+      quickEvents: 'عرس اور تقریبات',
+      quickEventsNote: 'سالانہ اور خصوصی پروگرام',
+      quickLocation: 'مقام اور راستہ',
+      quickLocationNote: 'بومن ہال منڈل، اننت پور',
+      quickStay: 'قیام اور سہولیات',
+      quickStayNote: 'درگاہ کے دفتر سے دریافت کریں',
+      readHistory: 'ہماری تاریخ پڑھیں',
+      announceLabel: 'اہم اعلان',
+      viewAll: 'سب دیکھیں',
+      labelPrayerSection: 'نماز',
+      prayerHeading: 'نماز کے اوقات',
+      prayerPending: 'پانچ وقت کی نماز فجر سے عشاء تک ادا کی جاتی ہے۔ اوقات سال بھر بدلتے رہتے ہیں اور درگاہ پر اعلان کیے جاتے ہیں — سفر سے پہلے براہ کرم مقامی طور پر تصدیق کر لیں۔',
+      prayerFajr: 'فجر',
+      prayerDhuhr: 'ظہر',
+      prayerAsr: 'عصر',
+      prayerMaghrib: 'مغرب',
+      prayerIsha: 'عشاء',
+      labelDonateSection: 'تعاون',
+      donateHeading: 'درگاہ کی مدد کریں',
+      donateText: 'آپ کا تعاون درگاہ کی مذہبی، فلاحی اور برادری کی سرگرمیوں میں مدد کرتا ہے۔',
+      donateNotice: 'آن لائن عطیہ ابھی دستیاب نہیں ہے — اس سائٹ پر کوئی ادائیگی نہیں لی جاتی۔ تعاون کے لیے براہ کرم درگاہ سے رابطہ کریں۔',
+      amountOther: 'دیگر',
+      contactToDonate: 'عطیہ کے لیے رابطہ کریں',
+      labelServicesSection: 'خدمات',
+      servicesHeading: 'ہماری خدمات',
+      servicesNote: 'دستیابی مختلف ہو سکتی ہے — سفر سے پہلے براہ کرم درگاہ کے دفتر سے تصدیق کریں۔',
+      svcCharity: 'خیرات',
+      svcLangar: 'لنگر',
+      svcStay: 'قیام',
+      svcVolunteer: 'رضاکارانہ خدمت',
+      svcRequests: 'دعا کی درخواستیں',
+      svcHelp: 'مدد ڈیسک',
+      galleryNote: 'ہونور کی درگاہ کے مناظر۔ مزید تصاویر شامل کی جائیں گی۔',
+      labelVisitSection: 'زیارت',
+      visitHeading: 'زائرین کی معلومات',
+      visitReach: 'کیسے پہنچیں',
+      visitReachText: 'ڈی. ہونور، بومن ہال منڈل، ضلع اننت پور، آندھرا پردیش 515812۔',
+      visitHours: 'زیارت کے اوقات',
+      visitHoursText: 'زیارت کے لیے ہر روز، سارا دن کھلا۔',
+      visitParking: 'پارکنگ',
+      visitParkingText: 'پہنچنے پر براہ کرم درگاہ کے دفتر سے دریافت کریں۔',
+      visitGuide: 'زائرین کے لیے ہدایات',
+      visitGuideText: 'باوقار لباس پہنیں، داخل ہونے سے پہلے جوتے اتاریں، اور نماز کے دوران خاموشی رکھیں۔',
+      visitMedical: 'طبی امداد',
+      visitMedicalText: 'قریب ترین سہولیات بومن ہال میں ہیں۔ مدد کے لیے دفتر سے رابطہ کریں۔',
+      visitEmergency: 'ہنگامی رابطہ',
+      visitEmergencyText: 'درگاہ کی تصدیق کے بعد رابطہ نمبر شائع کیا جائے گا۔',
+      labelUpdatesSection: 'اطلاعات',
+      updatesHeading: 'تازہ ترین اپڈیٹس',
+      updatesPending: 'فی الحال کوئی اطلاع نہیں۔ درگاہ کے اعلانات یہاں ظاہر ہوں گے۔',
+      labelContactSection: 'رابطہ',
+      contactHeading: 'ہم سے رابطہ کریں',
+      contactAddressLabel: 'پتہ',
+      contactPhoneLabel: 'فون',
+      contactEmailLabel: 'ای میل',
+      contactAddress: 'ڈی. ہونور، بومن ہال منڈل، ضلع اننت پور، آندھرا پردیش 515812',
+      openInMaps: 'گوگل میپس میں کھولیں',
+      ariaUtilityLinks: 'فوری رابطہ',
+      ariaAmounts: 'تجویز کردہ تعاون',
+
       darshanComingSoon: 'لائیو درشن فیچر جلد آ رہا ہے۔',
       thankYou: 'شکریہ',
       duaSubmitted: 'آپ کی دعا کی درخواست جمع کر دی گئی ہے۔',
@@ -541,6 +751,66 @@ const init = () => {
      --------------------------------------------------------------------- */
   const EVENTS = [];
 
+  /* Prayer times, the announcement banner and notices are all data-driven for
+     the same reason as EVENTS: anything written into the markup goes stale and
+     nobody notices. Leave them empty and the page says so honestly. */
+  const PRAYER_TIMES = [];   // [{ key: 'prayerFajr', time: '05:00' }, ...]
+  const ANNOUNCEMENT = null; // { text: { en: '', hi: '', ur: '' } }
+  const UPDATES = [];        // [{ date: '2026-09-01', text: { en, hi, ur } }]
+
+  const prayerList = document.getElementById('prayerList');
+  const prayerEmpty = document.getElementById('prayerEmpty');
+  const announceSection = document.getElementById('announcement');
+  const announceText = document.getElementById('announceText');
+  const updateList = document.getElementById('updateList');
+  const updatesEmpty = document.getElementById('updatesEmpty');
+
+  const pick = (obj) => (obj && (obj[currentLanguage] || obj.en)) || '';
+
+  const renderPrayer = () => {
+    if (!prayerList) return;
+    const dict = translations[currentLanguage] || translations.en;
+    prayerList.textContent = '';
+    if (prayerEmpty) prayerEmpty.hidden = PRAYER_TIMES.length > 0;
+    PRAYER_TIMES.forEach((p) => {
+      const cell = document.createElement('div');
+      cell.className = 'prayer-cell';
+      const name = document.createElement('span');
+      name.textContent = dict[p.key] || p.key;
+      const time = document.createElement('strong');
+      time.textContent = p.time;
+      cell.append(name, time);
+      prayerList.append(cell);
+    });
+  };
+
+  const renderAnnouncement = () => {
+    if (!announceSection) return;
+    const text = pick(ANNOUNCEMENT && ANNOUNCEMENT.text);
+    announceSection.hidden = !text;
+    if (announceText) announceText.textContent = text;
+  };
+
+  const renderUpdates = () => {
+    if (!updateList) return;
+    updateList.textContent = '';
+    if (updatesEmpty) updatesEmpty.hidden = UPDATES.length > 0;
+    if (!UPDATES.length) return;
+    const fmt = new Intl.DateTimeFormat(currentLanguage, { day: 'numeric', month: 'long', year: 'numeric' });
+    UPDATES.slice()
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .forEach((u) => {
+        const li = document.createElement('li');
+        const when = document.createElement('time');
+        when.dateTime = u.date;
+        when.textContent = fmt.format(new Date(`${u.date}T00:00:00`));
+        const body = document.createElement('span');
+        body.textContent = pick(u.text);
+        li.append(when, body);
+        updateList.append(li);
+      });
+  };
+
   const eventList = document.getElementById('eventList');
   const eventsEmpty = document.getElementById('eventsEmpty');
 
@@ -654,6 +924,9 @@ const init = () => {
 
     renderModal();
     renderEvents();
+    renderPrayer();
+    renderAnnouncement();
+    renderUpdates();
 
     if (!silent) {
       createToast(translations[lang].languageToast);
