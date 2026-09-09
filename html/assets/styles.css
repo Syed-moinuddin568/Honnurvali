@@ -1934,21 +1934,56 @@ footer h4 {
 
 /* -------------------------------------------------------------------- hero */
 
-/* single centred column, replacing the earlier two-column hero */
+/* Single left-aligned column at ~75% of the viewport.
+   grid-template-columns MUST be reset here: the earlier two-column hero rule
+   is still live further up this file, and without this the eyebrow, title,
+   body and buttons flow into its 1.1fr/0.9fr template instead of stacking.
+   The inline-start margin matches what .container would give, so the hero
+   lines up with the header brand and every section below it. */
 .hero__inner {
   display: grid;
-  justify-items: center;
-  text-align: center;
-  gap: 0.4rem;
-  max-width: 60rem;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: start;
+  text-align: start;
+  align-items: start;
+  gap: 0.55rem;
+  width: min(75%, 1400px);
+  max-width: none;
+  margin-inline-start: max(1.5rem, calc((100% - 1180px) / 2));
+  margin-inline-end: 0;
+}
+
+/* A soft pool of shade behind the copy only. Widening the page-wide scrim
+   instead would dim the shrine again, which is what it was lifted off. */
+.hero__inner::before {
+  content: '';
+  position: absolute;
+  inset: -3rem -4rem;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse 70% 60% at 32% 50%,
+    rgba(4, 10, 16, 0.78),
+    rgba(4, 10, 16, 0.45) 45%,
+    transparent 72%
+  );
+  pointer-events: none;
 }
 
 .hero__text {
-  margin-inline: auto;
+  margin-inline: 0;
+  max-width: 54ch;
 }
 
 .hero__actions {
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+/* 75% is too cramped for the title once the viewport is narrow */
+@media (max-width: 900px) {
+  .hero__inner {
+    width: calc(100% - 3rem);
+    margin-inline: 1.5rem;
+  }
 }
 
 /* ------------------------------------------------------------ quick access */
