@@ -662,7 +662,6 @@ button {
 .history-media img,
 .biography-media img,
 .video-card img,
-.donate-image img,
 .testimonial-avatar img {
   width: 100%;
   border-radius: var(--radius);
@@ -815,13 +814,6 @@ button {
     flex-direction: column;
     align-items: stretch;
   }
-}
-
-.donate-image {
-  margin: 1.5rem 0 1.3rem;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
 }
 
 .testimonial-avatar {
@@ -1082,14 +1074,7 @@ button {
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
 }
 
-.request-donate-grid {
-  grid-template-columns: 1fr 1fr;
-}
-
 .request-panel,
-.donate-panel {
-  padding: 2rem;
-}
 
 .dua-form {
   display: grid;
@@ -1526,9 +1511,6 @@ footer h4 {
   .history-grid,
   .events-grid,
   .biography-grid,
-  .request-donate-grid {
-    grid-template-columns: 1fr;
-  }
 
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1540,8 +1522,9 @@ footer h4 {
 }
 
 /* The brand's second line is the widest thing that is not a control, so it is
-   the first to go when the row gets tight. */
-@media (max-width: 1560px) {
+   the first to go when the row gets tight. Removing the Donate button freed
+   about 130px, so it can now survive down to a much narrower viewport. */
+@media (max-width: 1240px) {
   .site-nav > .brand .brand-subtitle {
     display: none;
   }
@@ -1675,7 +1658,6 @@ footer h4 {
 .dir-switching *::after {
   transition: none !important;
 }
-
 
 /* mirror the hero's scrim so it stays behind the copy */
 [dir='rtl'] .hero__overlay {
@@ -2181,45 +2163,6 @@ footer h4 {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 700;
-}
-
-/* ------------------------------------------------------------------ donate */
-
-.donate-panel {
-  display: grid;
-  justify-items: center;
-  text-align: center;
-  gap: 1.1rem;
-  padding: clamp(2rem, 5vw, 3.25rem);
-}
-
-.donate-panel h2 {
-  margin: 0;
-}
-
-.amount-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.7rem;
-}
-
-.amount {
-  min-width: 104px;
-  padding: 0.75rem 1.2rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text);
-  font-weight: 600;
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.3s ease;
-}
-
-.amount:hover,
-.amount.is-selected {
-  background: rgba(61, 229, 255, 0.16);
-  border-color: rgba(61, 229, 255, 0.34);
-  transform: translateY(-2px);
 }
 
 /* ---------------------------------------------------------------- services */
