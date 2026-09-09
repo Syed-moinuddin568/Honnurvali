@@ -18,15 +18,21 @@
     /* ---- one rAF-throttled scroll handler drives four things ------------ */
     let ticking = false;
 
-    /* The floating launcher sits below the header, and the header's height
-       changes with the utility bar, wrapping and the condense-on-scroll state.
-       Publishing it as a custom property keeps them from ever overlapping. */
-    const syncHeaderHeight = () => {
+    /* The floating launcher sits below the header. The header's height varies
+       with the utility bar, wrapping, and the condense-on-scroll state — and
+       tracking that live made the launcher drift upward as you scrolled, which
+       is the opposite of "floating". So keep the tallest height seen at this
+       viewport width: the launcher never overlaps the header and never moves.
+       Resetting on resize lets it shrink again when the layout genuinely does. */
+    let headerH = 0;
+
+    const syncHeaderHeight = (reset) => {
       if (!header) return;
-      document.documentElement.style.setProperty(
-        '--header-h',
-        `${Math.round(header.getBoundingClientRect().height)}px`
-      );
+      if (reset) headerH = 0;
+      const h = Math.round(header.getBoundingClientRect().height);
+      if (h <= headerH) return;
+      headerH = h;
+      document.documentElement.style.setProperty('--header-h', `${headerH}px`);
     };
 
     const onScroll = () => {
@@ -61,7 +67,7 @@
     );
     onScroll();
     syncHeaderHeight();
-    window.addEventListener('resize', syncHeaderHeight, { passive: true });
+    window.addEventListener('resize', () => syncHeaderHeight(true), { passive: true });
 
     toTop?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
