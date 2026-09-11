@@ -1,0 +1,666 @@
+/* ===========================================================================
+   Ziyarat — directory home page
+   Self-contained: shares no stylesheet with the shrine detail pages, so the
+   two themes can never bleed into one another.
+
+   Golden devotional: a deep warm ground, gold rules and a cream text colour,
+   with the pointed arch as the one repeated motif.
+   =========================================================================== */
+
+:root {
+  --ground: #0e0a05;
+  --ground-2: #150e07;
+  --surface: #1d1409;
+  --surface-2: #271a0d;
+
+  --gold: #c9a227;
+  --gold-bright: #ebcb6b;
+  --gold-dim: #8e7220;
+  --line: rgba(201, 162, 39, 0.22);
+  --line-soft: rgba(201, 162, 39, 0.1);
+
+  --cream: #f6eedd;
+  --cream-soft: #cdbc9b;
+  --cream-faint: #93846a;
+
+  --shell: 1180px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --radius: 18px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--cream);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* a slow warm glow behind everything, so the ground is not flat black */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 15% -10%, rgba(201, 162, 39, 0.14), transparent 60%),
+    radial-gradient(50rem 35rem at 90% 10%, rgba(138, 48, 48, 0.12), transparent 62%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.shell {
+  width: min(var(--shell), 100% - var(--gutter) * 2);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+/* ------------------------------------------------------------------ pieces */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 1.9rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.65;
+}
+
+.section-head {
+  max-width: 44rem;
+  margin-bottom: 2.75rem;
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+}
+
+.section-head p {
+  margin-top: 0.9rem;
+  color: var(--cream-soft);
+  max-width: 54ch;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 46px;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease,
+    transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.btn--gold {
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  color: #2a1d04;
+  box-shadow: 0 14px 34px rgba(201, 162, 39, 0.22);
+}
+
+.btn--gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 46px rgba(201, 162, 39, 0.32);
+}
+
+.btn--ghost {
+  border-color: var(--line);
+  color: var(--cream);
+}
+
+.btn--ghost:hover {
+  border-color: var(--gold);
+  background: rgba(201, 162, 39, 0.1);
+  transform: translateY(-2px);
+}
+
+/* The arch: drawn in CSS so it needs no font or image. */
+.arch-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 42px;
+  flex: none;
+  border: 1.5px solid var(--gold);
+  border-radius: 50% 50% 3px 3px / 42% 42% 3px 3px;
+}
+
+.arch-mark::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  rotate: 45deg;
+  background: var(--gold-bright);
+}
+
+/* ------------------------------------------------------------------ header */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(14, 10, 5, 0.86);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.masthead__bar {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 74px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.brand__tag {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+
+.masthead__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-inline-start: auto;
+}
+
+/* :not(.btn) matters — this selector is more specific than .btn--gold and
+   would otherwise repaint the CTA's dark label in cream, on gold. */
+.masthead__nav a:not(.btn) {
+  position: relative;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.93rem;
+  color: var(--cream-soft);
+  transition: color 0.25s ease;
+}
+
+.masthead__nav a:not(.btn):hover {
+  color: var(--gold-bright);
+}
+
+.masthead .btn {
+  min-height: 42px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.88rem;
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-inline-start: auto;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  margin: 4px auto;
+  background: var(--gold);
+}
+
+/* -------------------------------------------------------------------- hero */
+
+.hero {
+  position: relative;
+  padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+.hero__inner {
+  max-width: 46rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1.02;
+}
+
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(100deg, var(--gold-bright), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 1.4rem;
+  max-width: 48ch;
+  font-size: 1.08rem;
+  color: var(--cream-soft);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2.25rem;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.hero__meta div strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: var(--gold-bright);
+  line-height: 1;
+}
+
+.hero__meta div span {
+  font-size: 0.85rem;
+  color: var(--cream-faint);
+}
+
+/* ------------------------------------------------------------------- grid */
+
+.shrine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.shrine-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform 0.4s var(--ease), border-color 0.3s ease, box-shadow 0.4s var(--ease);
+}
+
+.shrine-card--live:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 162, 39, 0.18);
+}
+
+.shrine-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.shrine-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+
+.shrine-card--live:hover .shrine-card__media img {
+  transform: scale(1.06);
+}
+
+.shrine-card__badge {
+  position: absolute;
+  inset-block-start: 0.9rem;
+  inset-inline-start: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(14, 10, 5, 0.82);
+  border: 1px solid var(--line);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.shrine-card__badge i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6ee7a8;
+  font-style: normal;
+}
+
+.shrine-card__body {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.5rem;
+}
+
+.shrine-card__body h3 {
+  font-size: 1.4rem;
+}
+
+.shrine-card__where {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+}
+
+.shrine-card__body p {
+  color: var(--cream-soft);
+  font-size: 0.93rem;
+}
+
+.shrine-card__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.6rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--gold-bright);
+}
+
+.shrine-card__go span:last-child {
+  transition: transform 0.3s var(--ease);
+}
+
+.shrine-card--live:hover .shrine-card__go span:last-child {
+  transform: translateX(4px);
+}
+
+/* the whole card is the link target */
+.shrine-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* the "request a page" slot */
+.shrine-card--invite {
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+  padding: 2.5rem 1.75rem;
+  text-align: center;
+  border-style: dashed;
+  background: transparent;
+}
+
+.shrine-card--invite h3 {
+  font-size: 1.25rem;
+}
+
+.shrine-card--invite p {
+  color: var(--cream-soft);
+  font-size: 0.92rem;
+  max-width: 30ch;
+}
+
+/* ---------------------------------------------------------------- features */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.feature {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.6rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.3s ease, transform 0.35s var(--ease);
+}
+
+.feature:hover {
+  border-color: var(--line);
+  transform: translateY(-3px);
+}
+
+.feature strong {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--gold-bright);
+}
+
+.feature p {
+  color: var(--cream-soft);
+  font-size: 0.92rem;
+}
+
+/* ------------------------------------------------------------------- steps */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--line-soft);
+}
+
+.step {
+  display: grid;
+  gap: 0.55rem;
+  padding: 2rem 1.75rem;
+  background: var(--ground-2);
+}
+
+.step__no {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.step strong {
+  font-size: 1.05rem;
+}
+
+.step p {
+  color: var(--cream-soft);
+  font-size: 0.92rem;
+}
+
+/* ----------------------------------------------------------------- contact */
+
+.contact-card {
+  display: grid;
+  gap: 1.4rem;
+  justify-items: start;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(40rem 20rem at 15% 0%, rgba(201, 162, 39, 0.12), transparent 65%),
+    var(--surface);
+}
+
+.contact-card h2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  max-width: 20ch;
+}
+
+.contact-card p {
+  color: var(--cream-soft);
+  max-width: 52ch;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.contact-note {
+  padding: 0.75rem 1rem;
+  border-inline-start: 3px solid var(--gold);
+  background: rgba(201, 162, 39, 0.08);
+  color: var(--cream-soft);
+  font-size: 0.88rem;
+  border-radius: 0 10px 10px 0;
+}
+
+/* ------------------------------------------------------------------ footer */
+
+.colophon {
+  padding-block: 3rem 2rem;
+  border-top: 1px solid var(--line-soft);
+  background: var(--ground-2);
+}
+
+.colophon__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.colophon__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--cream-soft);
+}
+
+.colophon__links a:hover {
+  color: var(--gold-bright);
+}
+
+.colophon__base {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-soft);
+  font-size: 0.84rem;
+  color: var(--cream-faint);
+}
+
+/* ------------------------------------------------------------- responsive */
+
+@media (max-width: 860px) {
+  .burger {
+    display: block;
+  }
+
+  .masthead__nav {
+    display: none;
+  }
+
+  .masthead__nav[data-open='true'] {
+    position: absolute;
+    inset-inline: 0;
+    top: 100%;
+    display: grid;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 1rem var(--gutter) 1.5rem;
+    background: var(--ground-2);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .masthead__nav[data-open='true'] .btn {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
