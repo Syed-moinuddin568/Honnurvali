@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/styles.css?v=28" />
+  <link rel="stylesheet" href="./assets/styles.css?v=31" />
   <link rel="stylesheet" href="./assets/effects.css?v=5" />
 </head>
 <body>
@@ -134,6 +134,11 @@
           <div class="hero__actions">
             <a class="btn btn-primary" href="#visit" data-i18n="planVisit">Plan Your Visit</a>
           </div>
+          <ul class="hero__facts">
+            <li data-i18n="heroFact1">Open every day for ziyarat</li>
+            <li data-i18n="heroFact2">Bommanahal Mandal, Anantapur district</li>
+            <li data-i18n="heroFact3">English · اردو · हिन्दी</li>
+          </ul>
         </div>
         <a class="scroll-indicator" href="#quick" data-i18n-aria="ariaScrollAbout" aria-label="Scroll to quick access">
           <span class="scroll-indicator__dot"></span>
@@ -165,6 +170,16 @@
               <strong data-i18n="quickStay">Stay &amp; Facilities</strong>
               <small data-i18n="quickStayNote">Ask at the dargah office</small>
             </a>
+            <a class="quick-tile" href="#about">
+              <span class="quick-tile__icon" aria-hidden="true">📖</span>
+              <strong data-i18n="quickHistory">Sawane Hayat</strong>
+              <small data-i18n="quickHistoryNote">The saint’s life and lineage</small>
+            </a>
+            <a class="quick-tile" href="#gallery">
+              <span class="quick-tile__icon" aria-hidden="true">🖼</span>
+              <strong data-i18n="quickGallery">Photo Gallery</strong>
+              <small data-i18n="quickGalleryNote">Views of the shrine</small>
+            </a>
           </div>
         </div>
       </section>
@@ -179,11 +194,28 @@
             <span class="section-label" data-i18n="labelAboutSection">About the Dargah</span>
             <h2 data-i18n="aboutHeading">A shrine of the Deccan</h2>
             <p data-i18n="aboutText">Dargah Honnur is the revered shrine of Hazrat Khwaja Syed Shah Sufi Sarmasth Hussaini Chishty Al Quadri (R.A), who carried the teachings of the Chishti and Qadri orders through the Deccan. Pilgrims travel from across Anantapur district and neighbouring Karnataka — especially the Bellary region — to seek peace, attend qawwali gatherings and offer dua.</p>
+            <p class="about-more" data-i18n="aboutText2">A dargah is the tomb-shrine of a Sufi saint, and for centuries it has served the people around it as much as the pilgrims who travel to it. Visitors come to offer fatiha, tie a thread of intention, listen to qawwali and share in langar. The doors are open to everyone, of every faith — that openness is the oldest custom of the Deccan shrines.</p>
             <div class="journey stagger">
               <article><strong data-i18n="historyCard1Title">Bijapur</strong><p data-i18n="historyCard1Text">The saint began his journey in Bijapur, the Deccan sultanate country that shaped the region's Sufi traditions.</p></article>
               <article><strong data-i18n="historyCard2Title">The Deccan</strong><p data-i18n="historyCard2Text">He travelled through the Deccan carrying the teachings of the Chishti and Qadri silsilas, gathering followers along the way.</p></article>
               <article><strong data-i18n="historyCard3Title">Honnur</strong><p data-i18n="historyCard3Text">He chose Honnur for his final years, and the dargah built over his grave remains open to pilgrims every day.</p></article>
             </div>
+            <h3 class="subhead" data-i18n="silsilaHeading">The two silsilas</h3>
+            <div class="journey stagger">
+              <article><strong data-i18n="silsila1Title">Chishti</strong><p data-i18n="silsila1Text">Brought to the subcontinent by Khwaja Moinuddin Chishti of Ajmer, the Chishti order is known for love of God expressed through service to people, for sama — devotional music — and for accepting all who come, without distinction of creed or caste.</p></article>
+              <article><strong data-i18n="silsila2Title">Qadri</strong><p data-i18n="silsila2Text">The Qadri order traces itself to Shaikh Abdul Qadir Jilani of Baghdad. It holds to the sharia alongside the inner path, and reached the Deccan through scholars and travellers who settled across the sultanates.</p></article>
+            </div>
+
+            <h3 class="subhead" data-i18n="nameHeading">Reading the name</h3>
+            <dl class="glossary stagger">
+              <div><dt data-i18n="name1Title">Khwaja</dt><dd data-i18n="name1Text">A title of respect for a Sufi master and teacher.</dd></div>
+              <div><dt data-i18n="name2Title">Syed</dt><dd data-i18n="name2Text">A descendant of the family of the Prophet Muhammad ﷺ.</dd></div>
+              <div><dt data-i18n="name3Title">Sarmasth</dt><dd data-i18n="name3Text">One absorbed in divine love — a title given to those lost in the remembrance of God.</dd></div>
+              <div><dt data-i18n="name4Title">Hussaini</dt><dd data-i18n="name4Text">Of the line of Imam Hussain, grandson of the Prophet ﷺ.</dd></div>
+              <div><dt data-i18n="name5Title">Chishty Al Quadri</dt><dd data-i18n="name5Text">The two Sufi orders whose teachings he carried and passed on.</dd></div>
+              <div><dt data-i18n="name6Title">(R.A)</dt><dd data-i18n="name6Text">Short for Radi Allahu Anhu — “may God be pleased with him”.</dd></div>
+            </dl>
+
             <button class="btn btn-outline" type="button" data-item="sawane" data-i18n="readHistory">Read Our History</button>
           </div>
         </div>
@@ -212,6 +244,15 @@
           <div class="event-pending" id="eventsEmpty">
             <p data-i18n="eventsPending">Urs and event dates are announced at the dargah. Please contact the dargah for the current schedule.</p>
           </div>
+
+          <h3 class="subhead" data-i18n="ursHeading">What happens at an Urs</h3>
+          <p class="prose" data-i18n="ursIntro">An urs marks the anniversary of a saint’s passing — remembered not as a death but as a union with the Divine. The observances below are those kept at Chishti and Qadri shrines across the Deccan. Dates for Honnur are announced at the dargah itself.</p>
+          <div class="visit-grid stagger">
+            <article class="visit-item"><span aria-hidden="true">🌿</span><strong data-i18n="urs1Title">Sandal</strong><p data-i18n="urs1Text">Sandalwood paste is ceremonially applied to the tomb, opening the days of the urs.</p></article>
+            <article class="visit-item"><span aria-hidden="true">🌹</span><strong data-i18n="urs2Title">Chadar &amp; flowers</strong><p data-i18n="urs2Text">Pilgrims offer a chadar — an embroidered cloth — along with flowers and incense at the tomb.</p></article>
+            <article class="visit-item"><span aria-hidden="true">🎶</span><strong data-i18n="urs3Title">Qawwali &amp; sama</strong><p data-i18n="urs3Text">Devotional singing continues late into the night — the Chishti way of turning the heart towards God.</p></article>
+            <article class="visit-item"><span aria-hidden="true">🍛</span><strong data-i18n="urs4Title">Langar &amp; fatiha</strong><p data-i18n="urs4Text">Food is cooked and shared with everyone present, and fatiha is recited for the saint and for the departed.</p></article>
+          </div>
         </div>
       </section>
 
@@ -226,6 +267,16 @@
           <div class="event-pending" id="prayerEmpty">
             <p data-i18n="prayerPending">The five daily prayers are observed from Fajr to Isha. Exact timings shift through the year and are announced at the dargah — please confirm locally before travelling.</p>
           </div>
+
+          <h3 class="subhead" data-i18n="prayerWhenHeading">The five daily prayers</h3>
+          <div class="journey stagger">
+            <article><strong data-i18n="prayerFajr">Fajr</strong><p data-i18n="prayerFajrWhen">Before sunrise, in the first light of dawn.</p></article>
+            <article><strong data-i18n="prayerDhuhr">Dhuhr</strong><p data-i18n="prayerDhuhrWhen">After the sun passes its highest point at midday.</p></article>
+            <article><strong data-i18n="prayerAsr">Asr</strong><p data-i18n="prayerAsrWhen">In the late afternoon, before the light begins to fade.</p></article>
+            <article><strong data-i18n="prayerMaghrib">Maghrib</strong><p data-i18n="prayerMaghribWhen">Just after the sun has set.</p></article>
+            <article><strong data-i18n="prayerIsha">Isha</strong><p data-i18n="prayerIshaWhen">At night, once the last of the twilight has gone.</p></article>
+          </div>
+          <p class="prose" data-i18n="prayerJumuah">On Friday the midday prayer is replaced by Jumu‘ah, prayed in congregation. Thursday evening — the eve of Jumu‘ah — is traditionally the busiest time for ziyarat at a dargah.</p>
         </div>
       </section>
 
@@ -239,12 +290,12 @@
             <p class="prose" data-i18n="servicesNote">Availability varies — please confirm with the dargah office before you travel.</p>
           </div>
           <div class="service-grid stagger">
-            <article class="service"><span aria-hidden="true">🤲</span><strong data-i18n="svcCharity">Charity</strong></article>
-            <article class="service"><span aria-hidden="true">🍲</span><strong data-i18n="svcLangar">Langar</strong></article>
-            <article class="service"><span aria-hidden="true">🛏</span><strong data-i18n="svcStay">Accommodation</strong></article>
-            <article class="service"><span aria-hidden="true">🙋</span><strong data-i18n="svcVolunteer">Volunteer</strong></article>
-            <article class="service"><span aria-hidden="true">📋</span><strong data-i18n="svcRequests">Dua Requests</strong></article>
-            <article class="service"><span aria-hidden="true">🆘</span><strong data-i18n="svcHelp">Help Desk</strong></article>
+            <article class="service"><span aria-hidden="true">🤲</span><strong data-i18n="svcCharity">Charity</strong><p data-i18n="svcCharityText">Alms and help gathered for those who come in need.</p></article>
+            <article class="service"><span aria-hidden="true">🍲</span><strong data-i18n="svcLangar">Langar</strong><p data-i18n="svcLangarText">A shared meal cooked at the dargah and offered to every visitor alike.</p></article>
+            <article class="service"><span aria-hidden="true">🛏</span><strong data-i18n="svcStay">Accommodation</strong><p data-i18n="svcStayText">Simple lodging for pilgrims travelling from a distance.</p></article>
+            <article class="service"><span aria-hidden="true">🙋</span><strong data-i18n="svcVolunteer">Volunteer</strong><p data-i18n="svcVolunteerText">Khidmat — hands are welcome at langar, at the gate and during the urs.</p></article>
+            <article class="service"><span aria-hidden="true">📋</span><strong data-i18n="svcRequests">Dua Requests</strong><p data-i18n="svcRequestsText">Names and intentions carried to the shrine so that dua may be offered.</p></article>
+            <article class="service"><span aria-hidden="true">🆘</span><strong data-i18n="svcHelp">Help Desk</strong><p data-i18n="svcHelpText">Ask at the dargah office for directions, timings or anything you need.</p></article>
           </div>
         </div>
       </section>
@@ -258,12 +309,12 @@
             <p class="prose" data-i18n="galleryNote">Views of the shrine at Honnur. More photographs will be added.</p>
           </div>
           <div class="gallery-grid stagger">
-            <figure><img src="./assets/images/shrine-wide.webp" alt="Dargah Honnur seen from the approach" width="900" height="560" loading="lazy" decoding="async" /></figure>
-            <figure><img src="./assets/images/shrine-minarets.webp" alt="Minarets and the decorated perimeter wall" width="760" height="350" loading="lazy" decoding="async" /></figure>
-            <figure><img src="./assets/images/shrine-gateway.webp" alt="The gateway of Dargah Honnur" width="500" height="533" loading="lazy" decoding="async" /></figure>
-            <figure><img src="./assets/images/shrine-entrance.webp" alt="The shrine entrance, hung with a floral curtain" width="340" height="400" loading="lazy" decoding="async" /></figure>
-            <figure><img src="./assets/images/shrine-courtyard.webp" alt="Courtyard roofline at Dargah Honnur" width="596" height="423" loading="lazy" decoding="async" /></figure>
-            <figure><img src="./assets/images/shrine-arcade.webp" alt="Decorated arcade above the shrine courtyard" width="620" height="250" loading="lazy" decoding="async" /></figure>
+            <figure><img src="./assets/images/shrine-wide.webp" alt="Dargah Honnur seen from the approach" width="900" height="560" loading="lazy" decoding="async" /><figcaption data-i18n="galCap1">The dargah seen from the approach road.</figcaption></figure>
+            <figure><img src="./assets/images/shrine-minarets.webp" alt="Minarets and the decorated perimeter wall" width="760" height="350" loading="lazy" decoding="async" /><figcaption data-i18n="galCap2">Minarets rising above the decorated perimeter wall.</figcaption></figure>
+            <figure><img src="./assets/images/shrine-gateway.webp" alt="The gateway of Dargah Honnur" width="500" height="533" loading="lazy" decoding="async" /><figcaption data-i18n="galCap3">The gateway, painted and garlanded.</figcaption></figure>
+            <figure><img src="./assets/images/shrine-entrance.webp" alt="The shrine entrance, hung with a floral curtain" width="340" height="400" loading="lazy" decoding="async" /><figcaption data-i18n="galCap4">The shrine entrance, hung with a floral curtain.</figcaption></figure>
+            <figure><img src="./assets/images/shrine-courtyard.webp" alt="Courtyard roofline at Dargah Honnur" width="596" height="423" loading="lazy" decoding="async" /><figcaption data-i18n="galCap5">Rooflines around the courtyard.</figcaption></figure>
+            <figure><img src="./assets/images/shrine-arcade.webp" alt="Decorated arcade above the shrine courtyard" width="620" height="250" loading="lazy" decoding="async" /><figcaption data-i18n="galCap6">The decorated arcade above the courtyard.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -282,7 +333,18 @@
             <article class="visit-item"><span aria-hidden="true">📜</span><strong data-i18n="visitGuide">Visitor Guidelines</strong><p data-i18n="visitGuideText">Dress modestly, remove footwear before entering, and keep the shrine quiet during prayers.</p></article>
             <article class="visit-item"><span aria-hidden="true">🏥</span><strong data-i18n="visitMedical">Medical Help</strong><p data-i18n="visitMedicalText">Nearest facilities are in Bommanahal. Ask at the office for assistance.</p></article>
             <article class="visit-item"><span aria-hidden="true">📞</span><strong data-i18n="visitEmergency">Emergency Contact</strong><p data-i18n="visitEmergencyText">A contact number will be published once confirmed by the dargah.</p></article>
+            <article class="visit-item"><span aria-hidden="true">🚌</span><strong data-i18n="visitRoad">Getting here</strong><p data-i18n="visitRoadText">The dargah is reached by road through Bommanahal. Bus and share-auto routes change with the season — ask locally, or at the office, for the current connection.</p></article>
+            <article class="visit-item"><span aria-hidden="true">🧣</span><strong data-i18n="visitDress">What to wear</strong><p data-i18n="visitDressText">Modest clothing covering the shoulders and knees. Women are asked to cover the head inside the shrine; a scarf is enough.</p></article>
+            <article class="visit-item"><span aria-hidden="true">📷</span><strong data-i18n="visitPhoto">Photography</strong><p data-i18n="visitPhotoText">Photographs of the buildings are welcome. Please do not photograph people at prayer, and put the phone away inside the tomb chamber.</p></article>
           </div>
+
+          <h3 class="subhead" data-i18n="ziyaratHeading">Your ziyarat, step by step</h3>
+          <ol class="ziyarat-steps stagger">
+            <li><strong data-i18n="zStep1Title">Footwear at the door</strong><p data-i18n="zStep1Text">Remove your shoes at the entrance; a place is kept for them. Wash the hands and face if you can.</p></li>
+            <li><strong data-i18n="zStep2Title">Salaam and fatiha</strong><p data-i18n="zStep2Text">Face the tomb, offer salaam, and recite fatiha quietly. There is no fixed form — the intention is what matters.</p></li>
+            <li><strong data-i18n="zStep3Title">Chadar and flowers</strong><p data-i18n="zStep3Text">Many pilgrims offer a chadar, flowers or incense. Ask at the dargah where these may be obtained.</p></li>
+            <li><strong data-i18n="zStep4Title">Sit a while</strong><p data-i18n="zStep4Text">Stay for the qawwali if there is any, and share in the langar. Nobody is turned away, and nothing is asked of you.</p></li>
+          </ol>
           <a class="btn btn-primary" href="#contact" data-i18n="planVisit">Plan Your Visit</a>
         </div>
       </section>
@@ -293,6 +355,7 @@
           <div class="section-head">
             <span class="section-label" data-i18n="labelUpdatesSection">Notices</span>
             <h2 data-i18n="updatesHeading">Latest Updates</h2>
+            <p class="prose" data-i18n="updatesIntro">Notices from the dargah appear here — urs announcements, changes to timings, and news of repairs or building work. Nothing is posted unless the dargah sends it.</p>
           </div>
           <ul class="update-list" id="updateList" aria-live="polite"></ul>
           <div class="event-pending" id="updatesEmpty">
@@ -307,6 +370,13 @@
           <div class="section-head">
             <span class="section-label" data-i18n="labelContactSection">Contact</span>
             <h2 data-i18n="contactHeading">Contact Us</h2>
+          </div>
+
+          <h3 class="subhead" data-i18n="contactAskHeading">What you can ask about</h3>
+          <div class="journey stagger">
+            <article><strong data-i18n="ask1Title">Visiting and timings</strong><p data-i18n="ask1Text">Prayer timings for the day, the best hours to come, and access for elderly or disabled pilgrims.</p></article>
+            <article><strong data-i18n="ask2Title">Urs dates and programmes</strong><p data-i18n="ask2Text">The dates of the annual urs, the qawwali programme, and arrangements during the days of the gathering.</p></article>
+            <article><strong data-i18n="ask3Title">Langar, stay and khidmat</strong><p data-i18n="ask3Text">Meals, lodging for those travelling far, and how to offer your time as a volunteer.</p></article>
           </div>
           <div class="contact-grid">
             <div class="card-panel">
@@ -401,7 +471,7 @@
     <button class="to-top" id="toTop" type="button" data-i18n-aria="backToTop" aria-label="Back to Top">↑</button>
   </div>
 
-  <script src="./assets/script.js?v=24"></script>
+  <script src="./assets/script.js?v=26"></script>
   <script src="./assets/effects.js?v=4" defer></script>
 </body>
 </html>

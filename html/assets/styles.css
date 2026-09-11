@@ -655,7 +655,17 @@ button {
 
 .about-grid {
   grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
+  align-items: start;
+}
+
+/* The copy column grew well past the height of the photograph. Centring it
+   left a gap the height of a screen; sticky keeps the shrine in view while
+   the history is read. Only meaningful in the two-column layout. */
+@media (min-width: 769px) {
+  .about-media {
+    position: sticky;
+    top: 7rem;
+  }
 }
 
 .about-media img,
@@ -1580,6 +1590,13 @@ footer h4 {
     grid-template-columns: 1fr;
   }
 
+  /* Image above text. The 1024px rule puts .about-grid into two columns and
+     nothing ever undid it, so on a phone the whole about column was 139px
+     wide — narrower than any of the cards inside it. */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -2355,4 +2372,172 @@ footer h4 {
 .fact dd small {
   color: var(--text-secondary);
   font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   EXPANDED SECTION CONTENT
+   Sub-headings, glossary, ziyarat steps, service descriptions and gallery
+   captions added when each section was given real content.
+   ========================================================================== */
+
+.subhead {
+  margin: 2.5rem 0 0.25rem;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+
+.subhead + .prose {
+  margin-bottom: 1.25rem;
+}
+
+/* the hero's at-a-glance strip */
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.hero__facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.hero__facts li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex: none;
+}
+
+/* the second about paragraph, set apart from the lead */
+.about-more {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* titles in the saint's name, explained */
+.glossary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.glossary > div {
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.glossary dt {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.glossary dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* what each service actually means */
+.service p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+/* numbered ziyarat guidance */
+.ziyarat-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: ziyarat;
+}
+
+.ziyarat-steps li {
+  position: relative;
+  padding: 1.4rem 1.2rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  counter-increment: ziyarat;
+}
+
+.ziyarat-steps li::before {
+  content: counter(ziyarat);
+  position: absolute;
+  inset-block-start: -0.7rem;
+  inset-inline-start: 1.1rem;
+  display: grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #06121a;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ziyarat-steps strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+
+.ziyarat-steps p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* gallery captions: over the image, revealed on hover, always shown on touch */
+.gallery-grid figure {
+  position: relative;
+}
+
+.gallery-grid figcaption {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  padding: 1.6rem 0.9rem 0.7rem;
+  background: linear-gradient(transparent, rgba(4, 10, 16, 0.88));
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  translate: 0 100%;
+  opacity: 0;
+  transition: translate 0.35s ease, opacity 0.35s ease;
+}
+
+.gallery-grid figure:hover figcaption,
+.gallery-grid figure:focus-within figcaption {
+  translate: 0 0;
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .gallery-grid figcaption {
+    translate: 0 0;
+    opacity: 1;
+  }
 }
