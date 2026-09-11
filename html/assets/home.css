@@ -349,10 +349,25 @@ p {
 
 /* ------------------------------------------------------------------- grid */
 
+/* Explicitly three across. auto-fit was collapsing to however many cards
+   happened to exist, so two cards stretched to half the row each. */
 .shrine-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1000px) {
+  .shrine-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 660px) {
+  .shrine-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .shrine-card {
@@ -665,4 +680,38 @@ p {
   * {
     transition-duration: 0.01ms !important;
   }
+}
+
+/* The third slot: a plain marker that the directory is new, kept visually
+   quieter than the invite card so the two do not read as duplicates. */
+.shrine-card--soon {
+  display: grid;
+  place-items: center;
+  gap: 0.6rem;
+  padding: 2.5rem 1.75rem;
+  text-align: center;
+  border-style: dashed;
+  border-color: var(--line-soft);
+  background: transparent;
+  color: var(--cream-faint);
+}
+
+.shrine-card--soon .arch-mark {
+  opacity: 0.45;
+  border-color: var(--cream-faint);
+}
+
+.shrine-card--soon .arch-mark::after {
+  background: var(--cream-faint);
+}
+
+.shrine-card--soon strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--cream-soft);
+}
+
+.shrine-card--soon p {
+  font-size: 0.88rem;
+  max-width: 26ch;
 }
