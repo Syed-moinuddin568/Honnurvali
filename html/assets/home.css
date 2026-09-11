@@ -715,3 +715,532 @@ p {
   font-size: 0.88rem;
   max-width: 26ch;
 }
+
+/* ===========================================================================
+   INTERACTION LAYER
+   Appended deliberately: every rule below either adds motion or deepens a
+   hover state. Removing this whole block leaves the page fully usable.
+   =========================================================================== */
+
+/* Sticky header would otherwise clip the heading of whichever section an
+   anchor jumps to. */
+section[id],
+main[id] {
+  scroll-margin-block-start: 96px;
+}
+
+/* ------------------------------------------------------- scroll progress */
+
+.scroll-progress {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 60;
+  height: 2px;
+  pointer-events: none;
+}
+
+.scroll-progress__bar {
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold-bright));
+  box-shadow: 0 0 12px rgba(235, 203, 107, 0.55);
+}
+
+/* ---------------------------------------------------------------- header */
+
+.masthead {
+  transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.masthead__bar {
+  transition: min-height 0.35s var(--ease);
+}
+
+.masthead.is-stuck {
+  background: rgba(14, 10, 5, 0.95);
+  border-bottom-color: var(--line);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+.masthead.is-stuck .masthead__bar {
+  min-height: 62px;
+}
+
+/* an underline that grows from the centre, and stays lit for the section you
+   are actually looking at */
+.masthead__nav a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0.8rem;
+  inset-block-end: 0.3rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: 50% 50%;
+  transition: transform 0.3s var(--ease);
+}
+
+.masthead__nav a:not(.btn):hover::after,
+.masthead__nav a:not(.btn)[aria-current='true']::after {
+  transform: scaleX(1);
+}
+
+.masthead__nav a:not(.btn)[aria-current='true'] {
+  color: var(--gold-bright);
+}
+
+/* the mark reacts to the brand as a whole */
+.arch-mark {
+  transition: border-color 0.3s ease, box-shadow 0.4s var(--ease);
+}
+
+.arch-mark::after {
+  transition: rotate 0.5s var(--ease), background 0.3s ease;
+}
+
+.brand:hover .arch-mark {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 22px rgba(201, 162, 39, 0.32);
+}
+
+.brand:hover .arch-mark::after {
+  rotate: 135deg;
+}
+
+/* burger folds into a cross */
+.burger span {
+  transition: translate 0.3s var(--ease), rotate 0.3s var(--ease), opacity 0.2s ease;
+}
+
+.burger[aria-expanded='true'] span:nth-child(1) {
+  translate: 0 5.5px;
+  rotate: 45deg;
+}
+
+.burger[aria-expanded='true'] span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger[aria-expanded='true'] span:nth-child(3) {
+  translate: 0 -5.5px;
+  rotate: -45deg;
+}
+
+/* --------------------------------------------------------------- buttons */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* a light sweeping across the face on hover */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: -60%;
+  z-index: -1;
+  width: 45%;
+  transform: skewX(-18deg);
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.34), transparent);
+  transition: inset-inline-start 0.65s var(--ease);
+  pointer-events: none;
+}
+
+.btn--ghost::after {
+  background: linear-gradient(100deg, transparent, rgba(201, 162, 39, 0.28), transparent);
+}
+
+.btn:hover::after {
+  inset-inline-start: 125%;
+}
+
+.btn span[aria-hidden='true'] {
+  transition: translate 0.3s var(--ease);
+}
+
+.btn:hover span[aria-hidden='true'] {
+  translate: 4px 0;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------- scroll reveals */
+
+/* `translate` rather than `transform`, so a card's hover lift and its reveal
+   never overwrite one another — they are independent properties. */
+[data-reveal] {
+  opacity: 0;
+  translate: 0 20px;
+  transition: opacity 0.75s var(--ease), translate 0.75s var(--ease);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* the eyebrow's rule draws itself in once the heading arrives */
+[data-reveal] .eyebrow::before {
+  width: 0;
+}
+
+[data-reveal].is-revealed .eyebrow::before {
+  width: 1.9rem;
+  transition: width 0.7s var(--ease) calc(var(--i, 0) * 90ms + 260ms);
+}
+
+/* ------------------------------------------------ pointer-tracked warmth */
+
+/* `isolation` rather than raising the children: making .shrine-card__body a
+   positioned element would re-anchor the card-wide link overlay to the body
+   alone, shrinking the click target to exclude the photograph. */
+[data-spot] {
+  position: relative;
+  isolation: isolate;
+}
+
+[data-spot]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    16rem 16rem at var(--mx, 50%) var(--my, 50%),
+    rgba(201, 162, 39, 0.16),
+    transparent 68%
+  );
+  transition: opacity 0.4s ease;
+}
+
+[data-spot]:hover::before,
+[data-spot]:focus-within::before {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------ shrine grid */
+
+.shrine-grid {
+  perspective: 1200px;
+}
+
+.shrine-card {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform-style: preserve-3d;
+}
+
+/* re-stated after the tilt variables so the lift composes with them instead of
+   replacing the whole transform */
+.shrine-card--live:hover {
+  transform: translateY(-6px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+}
+
+/* while the pointer is inside, the transform must track it, not ease over
+   0.4s behind it */
+.shrine-card.is-tilting {
+  transition: transform 0.14s ease-out, border-color 0.3s ease, box-shadow 0.4s var(--ease);
+}
+
+/* the live badge breathes so it reads as a status, not a sticker */
+.shrine-card__badge i {
+  animation: pulse-dot 2.4s var(--ease) infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(110, 231, 168, 0.55); }
+  70% { box-shadow: 0 0 0 6px rgba(110, 231, 168, 0); }
+}
+
+/* a gold seam that wipes across the top edge of the live card */
+.shrine-card--live::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 2;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.6s var(--ease);
+  pointer-events: none;
+}
+
+.shrine-card--live:hover::after,
+.shrine-card--live:focus-within::after {
+  transform: scaleX(1);
+}
+
+/* the photograph warms up as well as scales */
+.shrine-card__media img {
+  filter: saturate(0.92);
+  transition: transform 0.7s var(--ease), filter 0.6s ease;
+}
+
+.shrine-card--live:hover .shrine-card__media img {
+  filter: saturate(1.06);
+}
+
+/* keyboard parity: tabbing to the card link gives the same treatment */
+.shrine-card--live:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 162, 39, 0.18);
+}
+
+.shrine-card--live:focus-within .shrine-card__go span:last-child {
+  transform: translateX(4px);
+}
+
+/* the row under the description */
+.shrine-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.shrine-card__foot .shrine-card__go {
+  margin-top: 0;
+}
+
+/* Sits above the card-wide link overlay, otherwise the click would navigate
+   instead of copying. */
+.copy-link {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cream-faint);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.copy-link:hover {
+  color: var(--gold-bright);
+  border-color: var(--line);
+  background: rgba(201, 162, 39, 0.08);
+}
+
+.copy-link.is-copied {
+  color: #6ee7a8;
+  border-color: rgba(110, 231, 168, 0.4);
+  background: rgba(110, 231, 168, 0.08);
+}
+
+/* the dashed slots answer the pointer too, just more quietly */
+.shrine-card--invite:hover,
+.shrine-card--soon:hover {
+  border-color: var(--gold-dim);
+  transform: translateY(-3px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+}
+
+.shrine-card--invite:hover .arch-mark {
+  border-color: var(--gold-bright);
+}
+
+/* ------------------------------------------------------------- features */
+
+.feature {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature strong {
+  transition: color 0.3s ease;
+}
+
+.feature:hover {
+  border-color: var(--gold-dim);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
+}
+
+/* a corner rule that extends on hover */
+.feature::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transition: width 0.45s var(--ease);
+}
+
+.feature:hover::after {
+  width: 60%;
+}
+
+/* ---------------------------------------------------------------- steps */
+
+.step {
+  position: relative;
+  transition: background 0.35s ease;
+}
+
+.step:hover {
+  background: var(--surface);
+}
+
+.step__no {
+  display: inline-block;
+  transition: color 0.3s ease, translate 0.4s var(--ease);
+}
+
+.step:hover .step__no {
+  color: var(--gold-bright);
+  translate: 0 -3px;
+}
+
+/* -------------------------------------------------------------- hero */
+
+/* a slow sheen travelling across the gradient words */
+.hero h1 em {
+  background-size: 220% 100%;
+  animation: sheen 9s linear infinite;
+}
+
+@keyframes sheen {
+  from { background-position: 0% 0; }
+  to { background-position: 220% 0; }
+}
+
+.hero__meta div {
+  transition: translate 0.35s var(--ease);
+}
+
+.hero__meta div:hover {
+  translate: 0 -3px;
+}
+
+.hero__meta div strong {
+  transition: text-shadow 0.35s ease;
+}
+
+.hero__meta div:hover strong {
+  text-shadow: 0 0 24px rgba(235, 203, 107, 0.45);
+}
+
+/* ------------------------------------------------------------ contact */
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-note {
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-card:hover .contact-note {
+  background: rgba(201, 162, 39, 0.12);
+}
+
+/* ------------------------------------------------------------- footer */
+
+.colophon__links a {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.colophon__links a::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: -3px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.3s var(--ease);
+}
+
+.colophon__links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* --------------------------------------------------------- back to top */
+
+.to-top {
+  position: fixed;
+  inset-block-end: 1.5rem;
+  inset-inline-end: 1.5rem;
+  z-index: 55;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(29, 20, 9, 0.88);
+  backdrop-filter: blur(10px);
+  color: var(--gold-bright);
+  font-size: 1.05rem;
+  cursor: pointer;
+  opacity: 0;
+  translate: 0 14px;
+  pointer-events: none;
+  transition: opacity 0.35s ease, translate 0.35s var(--ease), background 0.25s ease,
+    border-color 0.25s ease, transform 0.3s var(--ease);
+}
+
+.to-top.is-shown {
+  opacity: 1;
+  translate: 0 0;
+  pointer-events: auto;
+}
+
+.to-top:hover {
+  border-color: var(--gold);
+  background: rgba(201, 162, 39, 0.16);
+  transform: translateY(-3px);
+}
+
+/* ------------------------------------------------------ reduced motion */
+
+/* The block earlier in this file shortens transitions. These are keyframe
+   animations and pointer effects, which that rule does not reach. */
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 em,
+  .shrine-card__badge i {
+    animation: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    translate: none;
+  }
+
+  [data-spot]::before {
+    display: none;
+  }
+
+  .shrine-card {
+    transform: none;
+  }
+}
+
+/* The dashed slots stretch to match the live card's height; without this the
+   auto rows spread their few lines from top to bottom of the card. */
+.shrine-card--invite,
+.shrine-card--soon {
+  align-content: center;
+}

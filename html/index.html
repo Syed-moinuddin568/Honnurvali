@@ -9,9 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/home.css?v=4" />
+  <link rel="stylesheet" href="./assets/home.css?v=5" />
 </head>
 <body>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="progressBar"></div>
+  </div>
 
   <header class="masthead">
     <div class="shell masthead__bar">
@@ -41,20 +45,20 @@
     <!-- ---------------------------------------------------------------- hero -->
     <section class="section hero">
       <div class="shell hero__inner">
-        <p class="eyebrow">Dargah &amp; shrine pages</p>
-        <h1>A home online for <em>sacred places</em></h1>
-        <p>
+        <p class="eyebrow" data-reveal>Dargah &amp; shrine pages</p>
+        <h1 data-reveal>A home online for <em>sacred places</em></h1>
+        <p data-reveal>
           Every dargah has a story, a calendar and a doorway. Ziyarat turns that into
           a page pilgrims can actually use — history, prayer timings, urs dates,
           directions and photographs, in English, Urdu and Hindi.
         </p>
-        <div class="hero__actions">
+        <div class="hero__actions" data-reveal>
           <a class="btn btn--gold" href="#shrines">View a live page <span aria-hidden="true">→</span></a>
           <a class="btn btn--ghost" href="#contact">Request a page for your dargah</a>
         </div>
-        <div class="hero__meta">
-          <div><strong>3</strong><span>Languages, right-to-left included</span></div>
-          <div><strong>1</strong><span>Shrine page live today</span></div>
+        <div class="hero__meta" data-reveal>
+          <div><strong data-count="3">0</strong><span>Languages, right-to-left included</span></div>
+          <div><strong data-count="1">0</strong><span>Shrine page live today</span></div>
           <div><strong>Free</strong><span>No charge to ask</span></div>
         </div>
       </div>
@@ -63,7 +67,7 @@
     <!-- -------------------------------------------------------------- shrines -->
     <section class="section" id="shrines">
       <div class="shell">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">The directory</p>
           <h2>Shrines with a page</h2>
           <p>
@@ -74,7 +78,7 @@
 
         <div class="shrine-grid">
 
-          <article class="shrine-card shrine-card--live">
+          <article class="shrine-card shrine-card--live" data-reveal data-spot data-tilt>
             <div class="shrine-card__media">
               <img src="./assets/images/shrine-full.webp"
                    alt="Dargah Honnur — the gateway, courtyard and minarets"
@@ -90,11 +94,16 @@
                 The shrine of Hazrat Khwaja Syed Shah Sufi Sarmasth Hussaini Chishty
                 Al Quadri (R.A), who travelled from Bijapur across the Deccan.
               </p>
-              <span class="shrine-card__go">Open the page <span aria-hidden="true">→</span></span>
+              <div class="shrine-card__foot">
+                <span class="shrine-card__go">Open the page <span aria-hidden="true">→</span></span>
+                <button class="copy-link" type="button" data-copy="./honnur-vali.html">
+                  <span data-copy-label>Copy link</span>
+                </button>
+              </div>
             </div>
           </article>
 
-          <article class="shrine-card shrine-card--invite">
+          <article class="shrine-card shrine-card--invite" data-reveal data-spot data-tilt>
             <span class="arch-mark" aria-hidden="true"></span>
             <h3>Your dargah here</h3>
             <p>
@@ -104,7 +113,7 @@
             <a class="btn btn--ghost" href="#contact">Request a page</a>
           </article>
 
-          <article class="shrine-card shrine-card--soon">
+          <article class="shrine-card shrine-card--soon" data-reveal data-spot data-tilt>
             <span class="arch-mark" aria-hidden="true"></span>
             <strong>More shrines soon</strong>
             <p>This directory is new. Pages are added as shrines ask for them.</p>
@@ -117,7 +126,7 @@
     <!-- ------------------------------------------------------------- included -->
     <section class="section" id="included">
       <div class="shell">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">What each page includes</p>
           <h2>Everything a pilgrim looks for</h2>
           <p>
@@ -127,27 +136,27 @@
         </div>
 
         <div class="feature-grid">
-          <article class="feature">
+          <article class="feature" data-reveal data-spot>
             <strong>History &amp; biography</strong>
             <p>The saint's life and the shrine's story, written plainly and sourced.</p>
           </article>
-          <article class="feature">
+          <article class="feature" data-reveal data-spot>
             <strong>Prayer timings</strong>
             <p>The five daily prayers, kept current rather than frozen into the page.</p>
           </article>
-          <article class="feature">
+          <article class="feature" data-reveal data-spot>
             <strong>Urs &amp; events</strong>
             <p>Dates with a live countdown that expires on its own. Nothing goes stale.</p>
           </article>
-          <article class="feature">
+          <article class="feature" data-reveal data-spot>
             <strong>Directions &amp; map</strong>
             <p>The full address and a map, so nobody arrives at the wrong village.</p>
           </article>
-          <article class="feature">
+          <article class="feature" data-reveal data-spot>
             <strong>Gallery</strong>
             <p>Photographs of the shrine, resized and optimised for slow connections.</p>
           </article>
-          <article class="feature">
+          <article class="feature" data-reveal data-spot>
             <strong>Three languages</strong>
             <p>English, Urdu and Hindi — with Urdu properly right-to-left, not bolted on.</p>
           </article>
@@ -158,13 +167,13 @@
     <!-- ------------------------------------------------------------------ how -->
     <section class="section" id="how">
       <div class="shell">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">How it works</p>
           <h2>Three steps</h2>
         </div>
 
         <div class="steps">
-          <article class="step">
+          <article class="step" data-reveal data-spot>
             <span class="step__no">I</span>
             <strong>Send the details</strong>
             <p>
@@ -172,7 +181,7 @@
               you have, and whom to contact.
             </p>
           </article>
-          <article class="step">
+          <article class="step" data-reveal data-spot>
             <span class="step__no">II</span>
             <strong>We build the page</strong>
             <p>
@@ -180,7 +189,7 @@
               left out rather than invented.
             </p>
           </article>
-          <article class="step">
+          <article class="step" data-reveal data-spot>
             <span class="step__no">III</span>
             <strong>It goes live</strong>
             <p>
@@ -195,7 +204,7 @@
     <!-- -------------------------------------------------------------- contact -->
     <section class="section" id="contact">
       <div class="shell">
-        <div class="contact-card">
+        <div class="contact-card" data-reveal data-spot>
           <p class="eyebrow">Get in touch</p>
           <h2>Want a page for your dargah?</h2>
           <p>
@@ -237,25 +246,10 @@
     </div>
   </footer>
 
-  <script>
-    // Only interaction on this page: the mobile menu.
-    (() => {
-      const burger = document.getElementById('burger');
-      const nav = document.getElementById('nav');
-      if (!burger || !nav) return;
-      burger.addEventListener('click', () => {
-        const open = nav.dataset.open === 'true';
-        nav.dataset.open = String(!open);
-        burger.setAttribute('aria-expanded', String(!open));
-        burger.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
-      });
-      nav.addEventListener('click', (e) => {
-        if (e.target.closest('a') && window.matchMedia('(max-width: 860px)').matches) {
-          nav.dataset.open = 'false';
-          burger.setAttribute('aria-expanded', 'false');
-        }
-      });
-    })();
-  </script>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <script src="./assets/home.js?v=1" defer></script>
 </body>
 </html>
