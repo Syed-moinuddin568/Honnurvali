@@ -2541,3 +2541,54 @@ footer h4 {
     opacity: 1;
   }
 }
+
+/* ==========================================================================
+   BACK TO THE DIRECTORY
+   Arriving from the shrine grid, the only way back used to be the browser
+   button. Styled as a pill so it reads as leaving the page, not as one more
+   in-page anchor beside the utility links.
+   ========================================================================== */
+
+.site-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.22rem 0.75rem;
+  border: 1px solid rgba(61, 229, 255, 0.22);
+  border-radius: 999px;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.site-back:hover {
+  color: var(--primary);
+  border-color: rgba(61, 229, 255, 0.5);
+  background: rgba(61, 229, 255, 0.08);
+}
+
+.site-back__arrow {
+  transition: translate 0.25s ease;
+}
+
+.site-back:hover .site-back__arrow,
+.mobile-nav__link--back:hover .site-back__arrow {
+  translate: -3px 0;
+}
+
+/* The flex row already mirrors under dir=rtl; the glyph has to turn with it. */
+[dir='rtl'] .site-back__arrow {
+  rotate: 180deg;
+}
+
+[dir='rtl'] .site-back:hover .site-back__arrow,
+[dir='rtl'] .mobile-nav__link--back:hover .site-back__arrow {
+  translate: 3px 0;
+}
+
+.mobile-nav__link--back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+}

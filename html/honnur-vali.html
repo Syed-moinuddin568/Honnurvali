@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/styles.css?v=31" />
+  <link rel="stylesheet" href="./assets/styles.css?v=32" />
   <link rel="stylesheet" href="./assets/effects.css?v=5" />
 </head>
 <body>
@@ -20,6 +20,7 @@
       <!-- ---------------------------------------------------------- top bar -->
       <div class="utility-bar">
         <div class="container utility-bar__inner">
+          <a class="site-back" href="./"><span class="site-back__arrow" aria-hidden="true">←</span><span data-i18n="backToDirectory">All shrines</span></a>
           <nav class="utility-links" data-i18n-aria="ariaUtilityLinks" aria-label="Quick contact">
             <a href="#contact"><span aria-hidden="true">✆</span><span data-i18n="utilHelpline">Helpline</span></a>
             <a href="#contact"><span aria-hidden="true">✉</span><span data-i18n="utilEmail">Email</span></a>
@@ -73,6 +74,7 @@
             </button>
           </div>
           <nav class="mobile-nav" data-i18n-aria="ariaMobileNavigation" aria-label="Mobile navigation">
+            <a class="mobile-nav__link mobile-nav__link--back" href="./"><span class="site-back__arrow" aria-hidden="true">←</span><span data-i18n="backToDirectory">All shrines</span></a>
             <a class="mobile-nav__link" href="#home" data-i18n="navHome">Home</a>
             <a class="mobile-nav__link" href="#about" data-i18n="navAbout">About</a>
             <a class="mobile-nav__link" href="#visit" data-i18n="navVisit">Visit Us</a>
@@ -442,6 +444,7 @@
         <div>
           <h4 data-i18n="footerQuickLinks">Explore</h4>
           <ul>
+            <li><a href="./" data-i18n="backToDirectory">All shrines</a></li>
             <li><a href="#about" data-i18n="navAbout">About</a></li>
             <li><a href="#visit" data-i18n="navVisit">Visit Us</a></li>
             <li><a href="#events" data-i18n="navEvents">Urs &amp; Events</a></li>
@@ -471,7 +474,7 @@
     <button class="to-top" id="toTop" type="button" data-i18n-aria="backToTop" aria-label="Back to Top">↑</button>
   </div>
 
-  <script src="./assets/script.js?v=26"></script>
+  <script src="./assets/script.js?v=27"></script>
   <script src="./assets/effects.js?v=4" defer></script>
 </body>
 </html>
